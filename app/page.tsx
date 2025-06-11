@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { Menu, X, Sun, Mail, Phone, ArrowRight, BookOpen, Users, Award, Zap } from "lucide-react"
-import Image from "next/image"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -46,64 +45,7 @@ export default function MagnumPublishingSPA() {
     setIsMenuOpen(false)
   }
 
-  const portfolioItems = [
-    {
-      title: "The Struggles of a Bonsai: Partition Blues: Divine Heroes",
-      category: "Literature",
-      image: "/images/bonsai-struggles.jpeg",
-      description: "A profound literary work by Dr B.D. Bhushan exploring themes of partition and resilience",
-      author: "Dr B.D. Bhushan",
-    },
-    {
-      title: "Sanchi Rediscovered: A Journey Through Time",
-      category: "History",
-      image: "/images/sanchi-rediscovered.jpeg",
-      description: "Historical exploration of Bipin Ghosal's work from 1875-1930, compiled by Susheila Ghosal",
-      author: "Compiled by Susheila Ghosal",
-    },
-    {
-      title: "Enchanting World of the Lepchas",
-      category: "Cultural Studies",
-      image: "/images/enchanting-lepchas.jpeg",
-      description: "An immersive exploration of Lepcha culture and traditional craftsmanship",
-      author: "Cultural Documentation",
-    },
-    {
-      title: "Click! Stories of Human Relationships",
-      category: "Self-Help",
-      image: "/images/click-relationships.jpeg",
-      description: "Stories of human relationships and their journeys by Vineet Arora",
-      author: "Vineet Arora",
-    },
-    {
-      title: "Best Foot Forward",
-      category: "Social Studies",
-      image: "/images/best-foot-forward.jpeg",
-      description: "A compelling narrative about community and cultural gatherings",
-      author: "Rebecca de Regt",
-    },
-    {
-      title: "Ruskin Bond: A Study of Human Emotions",
-      category: "Literary Analysis",
-      image: "/images/ruskin-bond-emotions.jpeg",
-      description: "An in-depth analysis of human emotions in Ruskin Bond's works",
-      author: "Sangeeta Paul Budhiraja",
-    },
-    {
-      title: "WOW! A Mosaic of Trivia and Tales",
-      category: "Music & Entertainment",
-      image: "/images/wow-music-world.jpeg",
-      description: "A mosaic of trivia and tales from the music world",
-      author: "Vineet Arora",
-    },
-    {
-      title: "Tawang - The Abode of Prayers",
-      category: "Spirituality",
-      image: "/images/tawang-prayers.jpeg",
-      description: "A spiritual journey through the sacred monasteries of Tawang",
-      author: "Spiritual Documentation",
-    },
-  ]
+  // Portfolio items now come from portfolio-categories.ts
 
   const services = [
     {
@@ -297,7 +239,7 @@ export default function MagnumPublishingSPA() {
                   <div className="text-sm text-gray-600">Publications</div>
                 </div>
                 <div className="text-center p-4 bg-orange-50 rounded-lg">
-                  <div className="text-2xl font-bold text-orange-600">15+</div>
+                  <div className="text-2xl font-bold text-orange-600">20+</div>
                   <div className="text-sm text-gray-600">Years Experience</div>
                 </div>
               </div>
@@ -381,7 +323,6 @@ export default function MagnumPublishingSPA() {
                 <Badge variant="secondary">International-grade printing</Badge>
                 <Badge variant="secondary">Digital print-on-demand</Badge>
                 <Badge variant="secondary">eBook conversion</Badge>
-                <Badge variant="secondary">Distribution services</Badge>
               </div>
             </div>
           </div>
@@ -398,45 +339,13 @@ export default function MagnumPublishingSPA() {
             </p>
           </div>
 
-          {/* Find the section with id="portfolio" and replace the grid of portfolioItems with this: */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {/* Portfolio categories grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-8">
             {getDisplayableCategories().map((category) => (
               <CategoryGallery key={category.id} category={category.name} images={category.images} />
             ))}
-
-            {/* Keep some of the original portfolio items that aren't in categories yet */}
-            {portfolioItems.map((item, index) => (
-              <div key={index} className="group cursor-pointer">
-                <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-                  <div className="aspect-[3/4] relative">
-                    <Image
-                      src={item.image || "/placeholder.svg"}
-                      alt={item.title}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="text-white p-6 w-full">
-                      <Badge className="mb-3 bg-orange-500 hover:bg-orange-600">{item.category}</Badge>
-                      <h3 className="text-lg font-semibold mb-2 line-clamp-2">{item.title}</h3>
-                      <p className="text-sm text-gray-200 mb-2 line-clamp-2">{item.description}</p>
-                      <p className="text-xs text-orange-200 font-medium">{item.author}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
-
           <PortfolioShowcase />
-
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg">
-              View Complete Portfolio
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </div>
         </div>
       </section>
 
