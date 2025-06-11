@@ -257,7 +257,7 @@ export default function MagnumPublishingSPA() {
                 <p>
                   Custom publishing refers to the tailored creation of publications and reports for organizations,
                   institutions, businesses, and individuals seeking self-publishing services. This process involves
-                  producing high-quality materials that effectively communicate an organization's message, values, and
+                  producing high-quality materials that effectively communicate an organization&apos;s message, values, and
                   goals.
                 </p>
                 <p>
@@ -277,13 +277,13 @@ export default function MagnumPublishingSPA() {
               </div>
               <div className="prose text-gray-600 space-y-4">
                 <p>
-                  As a custom publisher, our story is told through the diverse range of publications we've produced. Our
-                  titles cover a broad spectrum of subjects, including Climate Change, Educational Materials, Children's
+                  As a custom publisher, our story is told through the diverse range of publications we&apos;ve produced. Our
+                  titles cover a broad spectrum of subjects, including Climate Change, Educational Materials, Children&apos;s
                   Books, Government Publications, Defence and Security, and reports for Global Consultants and Trade
                   Organizations.
                 </p>
                 <p>
-                  We've successfully published personal and corporate publications, such as annual reports, white
+                  We&apos;ve successfully published personal and corporate publications, such as annual reports, white
                   papers, research papers, books, magazines, and eBooks, using state-of-the-art equipment and processes.
                   Our digital print-on-demand facilities enable us to meet tight deadlines and deliver high-quality
                   publications quickly.
@@ -446,7 +446,7 @@ export default function MagnumPublishingSPA() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ready to bring your publishing project to life? Let's discuss how we can help you create high-quality
+              Ready to bring your publishing project to life? Let&apos;s discuss how we can help you create high-quality
               publications that exceed your expectations.
             </p>
           </div>
