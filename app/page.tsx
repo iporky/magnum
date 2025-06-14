@@ -1,7 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, Sun, Mail, Phone, ArrowRight, BookOpen, Users, Award, Zap } from "lucide-react"
+import { Menu, X, Mail, ArrowRight, BookOpen, Users, Award, Zap, ArrowUp } from "lucide-react"
+
+import Image from "next/image"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -13,6 +15,19 @@ import { getDisplayableCategories } from "@/data/portfolio-categories"
 export default function MagnumPublishingSPA() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
+  const [showScrollTop, setShowScrollTop] = useState(false)
+
+  useEffect(() => {
+    const handleShowScrollTop = () => {
+      setShowScrollTop(window.scrollY > 600)
+    }
+    window.addEventListener("scroll", handleShowScrollTop)
+    return () => window.removeEventListener("scroll", handleShowScrollTop)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +60,7 @@ export default function MagnumPublishingSPA() {
     setIsMenuOpen(false)
   }
 
-  // Portfolio items now come from portfolio-categories.ts
+  // Portfolio items are now managed through category galleries
 
   const services = [
     {
@@ -79,12 +94,12 @@ export default function MagnumPublishingSPA() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center">
-                <Sun className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden bg-white">
+                <Image src="/logo.png" alt="Magnum Logo" width={40} height={40} priority />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-gray-900">MAGNUM</h1>
-                <p className="text-xs text-orange-500 font-medium">CUSTOM PUBLISHING</p>
+                <p className="text-xs text-[rgb(250,165,27)] font-medium">CUSTOM PUBLISHING</p>
               </div>
             </div>
 
@@ -95,18 +110,13 @@ export default function MagnumPublishingSPA() {
                   key={section}
                   onClick={() => scrollToSection(section)}
                   className={`text-sm font-medium transition-colors capitalize ${
-                    activeSection === section ? "text-orange-500" : "text-gray-600 hover:text-orange-500"
+                    activeSection === section ? "text-[rgb(250,165,27)]" : "text-gray-600 hover:text-[rgb(250,165,27)]"
                   }`}
                 >
                   {section === "portfolio" ? "Our Work" : section}
                 </button>
               ))}
-              <a
-                href="mailto:arvind@magnumcustompublishing.com"
-                className="text-sm text-gray-600 hover:text-orange-500 transition-colors"
-              >
-                arvind@magnumcustompublishing.com
-              </a>
+
             </div>
 
             {/* Mobile menu button */}
@@ -124,17 +134,34 @@ export default function MagnumPublishingSPA() {
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className="block w-full text-left text-gray-600 hover:text-orange-500 transition-colors capitalize"
+                  className="block w-full text-left text-gray-600 hover:text-[rgb(250,165,27)] transition-colors capitalize"
                 >
                   {section === "portfolio" ? "Our Work" : section}
                 </button>
               ))}
-              <a
-                href="mailto:arvind@magnumcustompublishing.com"
-                className="block text-gray-600 hover:text-orange-500 transition-colors"
-              >
-                arvind@magnumcustompublishing.com
-              </a>
+              <div className="space-y-4">
+                <a
+                  href="mailto:arvind@magnumcustompublishing.com"
+                  className="block text-gray-600 hover:text-[rgb(250,165,27)] transition-colors"
+                >
+                  arvind@magnumcustompublishing.com
+                </a>
+                <a
+                  href="https://wa.me/919811097054?text=I'm%20interested%20in%20publishing%20services"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-600 hover:text-[rgb(250,165,27)] transition-colors"
+                >
+                  <Image 
+                    src="/WhatsApp.webp" 
+                    alt="WhatsApp" 
+                    width={24} 
+                    height={24} 
+                    className="object-contain" 
+                  />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
             </div>
           </div>
         )}
@@ -144,14 +171,14 @@ export default function MagnumPublishingSPA() {
       <section id="home" className="pt-16 bg-gradient-to-br from-orange-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="flex justify-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
-                <Sun className="w-12 h-12 text-white" />
+            <div className="flex justify-center mb-2">
+              <div className="w-20 h-20 rounded-full flex items-center justify-center overflow-hidden">
+                <Image src="/logo.png" alt="Magnum Logo" width={70} height={70} priority />
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               MAGNUM CUSTOM
-              <span className="block text-orange-500">PUBLISHING</span>
+              <span className="block text-[rgb(250,165,27)]">PUBLISHING</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               A leader in custom publishing solutions. We provide comprehensive 360-degree publishing and printing
@@ -160,7 +187,7 @@ export default function MagnumPublishingSPA() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-orange-500 hover:bg-orange-600"
+                className="bg-[rgb(250,165,27)] hover:bg-orange-400"
                 onClick={() => scrollToSection("portfolio")}
               >
                 View Our Work
@@ -191,7 +218,7 @@ export default function MagnumPublishingSPA() {
             <div className="space-y-6">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                  <BookOpen className="w-6 h-6 text-orange-500" />
+                  <BookOpen className="w-6 h-6 text-[rgb(250,165,27)]" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">What is Custom Publishing?</h3>
               </div>
@@ -213,7 +240,7 @@ export default function MagnumPublishingSPA() {
             <div className="space-y-6">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                  <Award className="w-6 h-6 text-orange-500" />
+                  <Award className="w-6 h-6 text-[rgb(250,165,27)]" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Our Story & Expertise</h3>
               </div>
@@ -234,12 +261,12 @@ export default function MagnumPublishingSPA() {
 
               {/* Stats or highlights */}
               <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="text-center p-4 bg-orange-50 rounded-lg">
-                  <div className="text-2xl font-bold text-orange-600">500+</div>
+                <div className="text-center p-4 bg-[rgba(250,165,27,0.08)] rounded-lg">
+                  <div className="text-2xl font-bold text-[rgb(250,165,27)]">500+</div>
                   <div className="text-sm text-gray-600">Publications</div>
                 </div>
-                <div className="text-center p-4 bg-orange-50 rounded-lg">
-                  <div className="text-2xl font-bold text-orange-600">20+</div>
+                <div className="text-center p-4 bg-[rgba(250,165,27,0.08)] rounded-lg">
+                  <div className="text-2xl font-bold text-[rgb(250,165,27)]">20+</div>
                   <div className="text-sm text-gray-600">Years Experience</div>
                 </div>
               </div>
@@ -258,7 +285,7 @@ export default function MagnumPublishingSPA() {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[rgb(250,165,27)] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Collaborative Partnership</h4>
@@ -268,7 +295,7 @@ export default function MagnumPublishingSPA() {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[rgb(250,165,27)] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Quality & Speed</h4>
@@ -278,7 +305,7 @@ export default function MagnumPublishingSPA() {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[rgb(250,165,27)] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Award className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">End-to-End Service</h4>
@@ -307,7 +334,7 @@ export default function MagnumPublishingSPA() {
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <div className="text-orange-500">{service.icon}</div>
+                    <div className="text-[rgb(250,165,27)]">{service.icon}</div>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
                   <p className="text-gray-600">{service.description}</p>
@@ -323,6 +350,7 @@ export default function MagnumPublishingSPA() {
                 <Badge variant="secondary">International-grade printing</Badge>
                 <Badge variant="secondary">Digital print-on-demand</Badge>
                 <Badge variant="secondary">eBook conversion</Badge>
+                <Badge variant="secondary">Distribution services</Badge>
               </div>
             </div>
           </div>
@@ -345,7 +373,15 @@ export default function MagnumPublishingSPA() {
               <CategoryGallery key={category.id} category={category.name} images={category.images} />
             ))}
           </div>
+
           <PortfolioShowcase />
+
+          <div className="text-center mt-12">
+            <Button variant="outline" size="lg">
+              View Complete Portfolio
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -366,13 +402,13 @@ export default function MagnumPublishingSPA() {
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-orange-500" />
+                    <Mail className="w-6 h-6 text-[rgb(250,165,27)]" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Email</h4>
                     <a
                       href="mailto:arvind@magnumcustompublishing.com"
-                      className="text-orange-500 hover:text-orange-600 transition-colors"
+                      className="text-[rgb(250,165,27)] hover:text-[rgb(250,165,27)] transition-colors"
                     >
                       arvind@magnumcustompublishing.com
                     </a>
@@ -381,11 +417,24 @@ export default function MagnumPublishingSPA() {
 
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-orange-500" />
+                    <Image
+                      src="/WhatsApp.webp"
+                      alt="WhatsApp"
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                    />
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">WhatsApp</h4>
-                    <p className="text-gray-600">Available for quick consultations</p>
+                    <a
+                      href="https://wa.me/919811097054?text=I'm%20interested%20in%20publishing%20services"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[rgb(250,165,27)] hover:text-[rgb(250,165,27)]/80 transition-colors flex items-center gap-2"
+                    >
+                      <span>+91 98110 97054</span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -394,19 +443,19 @@ export default function MagnumPublishingSPA() {
                 <h4 className="font-semibold text-gray-900 mb-3">Why Choose Magnum?</h4>
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-[rgb(250,165,27)] rounded-full"></div>
                     <span>Comprehensive 360-degree solutions</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-[rgb(250,165,27)] rounded-full"></div>
                     <span>Quality, precision, and timeliness</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-[rgb(250,165,27)] rounded-full"></div>
                     <span>Trusted partner in publishing industry</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-[rgb(250,165,27)] rounded-full"></div>
                     <span>Personalized guidance throughout</span>
                   </li>
                 </ul>
@@ -451,7 +500,7 @@ export default function MagnumPublishingSPA() {
                     placeholder="Tell us about your project..."
                   ></textarea>
                 </div>
-                <Button className="w-full bg-orange-500 hover:bg-orange-600" size="lg">
+                <Button className="w-full bg-[rgb(250,165,27)] hover:bg-[rgb(250,165,27)]/90" size="lg">
                   Send Message
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
@@ -466,8 +515,8 @@ export default function MagnumPublishingSPA() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center">
-                <Sun className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden bg-white">
+                <Image src="/logo.png" alt="Magnum Logo" width={40} height={40} />
               </div>
               <div>
                 <h3 className="text-lg font-bold">MAGNUM CUSTOM PUBLISHING</h3>
@@ -478,7 +527,7 @@ export default function MagnumPublishingSPA() {
               <p className="text-gray-400">© 2024 Magnum Custom Publishing. All rights reserved.</p>
               <a
                 href="mailto:arvind@magnumcustompublishing.com"
-                className="text-orange-400 hover:text-orange-300 transition-colors"
+                className="text-[rgb(250,165,27)] hover:text-[rgb(250,165,27)] transition-colors"
               >
                 arvind@magnumcustompublishing.com
               </a>
@@ -486,6 +535,15 @@ export default function MagnumPublishingSPA() {
           </div>
         </div>
       </footer>
+      {/* Scroll to top button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed right-4 bottom-4 p-3 rounded-full bg-[rgb(250,165,27)] text-white shadow-lg hover:bg-[rgb(250,165,27)]/80 transition-all duration-300 ${
+          showScrollTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
+        }`}
+      >
+        <ArrowUp className="w-6 h-6" />
+      </button>
     </div>
   )
 }

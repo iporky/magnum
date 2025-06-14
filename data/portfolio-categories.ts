@@ -82,7 +82,7 @@ export const portfolioCategories: PortfolioCategory[] = [
   },
   {
     id: "climate-change-mitigation-adaptation",
-    name: "Climate Change Mitigation & Adaptation Studies",
+    name: "Climate Change Mitigation Studies",
     description: "Research publications and reports on climate change solutions and environmental studies",
     images: [
       {
@@ -189,7 +189,7 @@ export const portfolioCategories: PortfolioCategory[] = [
   },
   {
     id: "foreign-languages",
-    name: "Foreign Languages - French, Russian, Spanish",
+    name: "Foreign Languages - French, Rus, Spanish",
     description: "Publications and educational materials in French, Russian, Spanish and other foreign languages",
     images: [
       {
