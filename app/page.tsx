@@ -172,8 +172,8 @@ export default function MagnumPublishingSPA() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center max-w-4xl mx-auto">
             <div className="flex justify-center mb-2">
-              <div className="w-20 h-20 rounded-full flex items-center justify-center overflow-hidden">
-                <Image src="/logo.png" alt="Magnum Logo" width={70} height={70} priority />
+              <div className="w-40 h-40 rounded-full flex items-center justify-center overflow-hidden">
+                <Image src="/logo.png" alt="Magnum Logo" width={120} height={120} priority />
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -247,12 +247,11 @@ export default function MagnumPublishingSPA() {
               <div className="prose text-gray-600 space-y-4">
                 <p>
                   As a custom publisher, our story is told through the diverse range of publications we&apos;ve produced. Our
-                  titles cover a broad spectrum of subjects, including Climate Change, Educational Materials, Children&apos;s
-                  Books, Government Publications, Defence and Security, and reports for Global Consultants and Trade
-                  Organizations.
+                  titles cover a broad spectrum including Climate Change, Government Publications, Defence and Security, reports for Global Consultants and Trade
+                  Organizations, Educational Materials and Children&apos;s Books
                 </p>
                 <p>
-                  We&apos;ve successfully published personal and corporate publications, such as annual reports, white
+                  We&apos;ve successfully published personal and corporate publications, such as self published books, annual reports, white
                   papers, research papers, books, magazines, and eBooks, using state-of-the-art equipment and processes.
                   Our digital print-on-demand facilities enable us to meet tight deadlines and deliver high-quality
                   publications quickly.
@@ -324,7 +323,7 @@ export default function MagnumPublishingSPA() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We offer end-to-end services from ideation to print production, as well as standalone services to meet
+              We offer end-to-end services from ideation to print production as well as standalone services to meet
               your specific publishing needs.
             </p>
           </div>
@@ -349,8 +348,9 @@ export default function MagnumPublishingSPA() {
               <div className="flex flex-wrap gap-2 justify-center">
                 <Badge variant="secondary">International-grade printing</Badge>
                 <Badge variant="secondary">Digital print-on-demand</Badge>
-                <Badge variant="secondary">eBook conversion</Badge>
-                <Badge variant="secondary">Distribution services</Badge>
+                <Badge variant="secondary">Offset printing,</Badge>
+                <Badge variant="secondary">Hardcase binding</Badge>
+                <Badge variant="secondary">Section sewing and perfect binding</Badge>
               </div>
             </div>
           </div>
@@ -368,7 +368,7 @@ export default function MagnumPublishingSPA() {
           </div>
 
           {/* Portfolio categories grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             {getDisplayableCategories().map((category) => (
               <CategoryGallery key={category.id} category={category.name} images={category.images} />
             ))}
@@ -376,12 +376,6 @@ export default function MagnumPublishingSPA() {
 
           <PortfolioShowcase />
 
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg">
-              View Complete Portfolio
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </div>
         </div>
       </section>
 
@@ -524,7 +518,7 @@ export default function MagnumPublishingSPA() {
               </div>
             </div>
             <div className="text-center md:text-right">
-              <p className="text-gray-400">© 2024 Magnum Custom Publishing. All rights reserved.</p>
+              <p className="text-gray-400">© 2025 Magnum Custom Publishing. All rights reserved.</p>
               <a
                 href="mailto:arvind@magnumcustompublishing.com"
                 className="text-[rgb(250,165,27)] hover:text-[rgb(250,165,27)] transition-colors"

@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { X } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { CATEGORY_THUMBNAILS } from "@/data/category-thumbnails"
 import { Dialog, DialogContent, DialogTitle, DialogHeader, DialogDescription } from "@/components/ui/dialog"
 
 interface GalleryImage {
@@ -35,8 +36,9 @@ export function CategoryGallery({
   const isOpen = externalIsOpen !== undefined ? externalIsOpen : internalIsOpen
   const setIsOpen = externalSetIsOpen || setInternalIsOpen
 
-  // First image is used as the category thumbnail
-  const thumbnailImage = images[0]
+  // Select thumbnail image based on CATEGORY_THUMBNAILS constant
+  const thumbnailImageName = CATEGORY_THUMBNAILS[category]
+  const thumbnailImage = images.find((image) => image.image.includes(thumbnailImageName)) || images[0]
 
   return (
     <>
@@ -45,13 +47,16 @@ export function CategoryGallery({
         <div className="group cursor-pointer" onClick={() => setIsOpen(true)}>
           <div className="flex flex-col gap-4">
             <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-              <div className="aspect-[3/4] relative">
+              <div style={{ aspectRatio: 3 / 4 }} className="relative">
                 <Image
                   src={thumbnailImage.image || "/placeholder.svg"}
                   alt={thumbnailImage.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="object-contain group-hover:scale-105 transition-transform duration-500"
                 />
+                <div className="absolute bottom-10 left-0 right-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-white text-sm font-medium py-2">Click to see more samples</p>
+                </div>
               </div>
             </div>
             <div className="p-4 text-center">
@@ -83,7 +88,7 @@ export function CategoryGallery({
               {images.map((image, index) => (
                 <div key={index} className="group cursor-pointer" onClick={() => setSelectedImage(image)}>
                   <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
-                    <div className="aspect-[3/4] relative">
+                    <div style={{ aspectRatio: category === "Children's Books in Regional Languages" ? 1.5 : 3 / 4.2 }} className="relative">
                       <Image
                         src={image.image || "/placeholder.svg"}
                         alt={image.title}

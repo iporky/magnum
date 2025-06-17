@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { portfolioCategories } from "@/data/portfolio-categories"
+import { CATEGORY_THUMBNAILS } from "@/data/category-thumbnails"
 import { CategoryGallery } from "@/components/category-gallery"
 
 export function PortfolioShowcase() {
@@ -31,9 +32,9 @@ export function PortfolioShowcase() {
               key={index} 
               className="overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
             >
-              <div className="relative h-64 lg:h-80 bg-white flex items-center justify-center">
+              <div className="relative h-80 lg:h-96 bg-white flex items-center justify-center">
                 <Image 
-                  src={category.images[0].image || "/placeholder.svg"} 
+                  src={`/images/categories/${category.name}/${CATEGORY_THUMBNAILS[category.name] || "placeholder.svg"}`} 
                   alt={category.name} 
                   fill 
                   className="object-contain" 
