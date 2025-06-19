@@ -40,7 +40,7 @@ export const portfolioCategories: PortfolioCategory[] = [
         title: "Don't Go To Prison After College",
         description: "Self-published career guidance book for recent graduates",
         image: "/images/categories/Self-publishing/Don't go to prison after college.jpg",
-        author: "Dr. Rajiv Sharma",
+        author: "Jatin Bhandari",
       },
       {
         title: "Hardcover Book Printing",
@@ -83,7 +83,7 @@ export const portfolioCategories: PortfolioCategory[] = [
         title: "Balochistan-Forgotten War, Forsaken People",
         description: "Analysis of the ongoing conflict in Balochistan and its geopolitical implications",
         image: "/images/categories/Think Tanks, Defence and Security Issues/Balochistan-Forgotten War, Forsaken People.jpg",
-        author: "Institute for Defense Studies and Analyses",
+        author: "Vivekananda International Foundation",
       },
       {
         title: "Changing Security Dynamics in Southeast Asia",

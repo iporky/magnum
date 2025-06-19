@@ -248,12 +248,12 @@ export default function MagnumPublishingSPA() {
                 <p>
                   As a custom publisher, our story is told through the diverse range of publications we&apos;ve produced. Our
                   titles cover a broad spectrum including Climate Change, Government Publications, Defence and Security, reports for Global Consultants and Trade
-                  Organizations, Educational Materials and Children&apos;s Books
+                  Organizations, Educational Materials and Children&apos;s Books.
                 </p>
                 <p>
                   We&apos;ve successfully published personal and corporate publications, such as self published books, annual reports, white
                   papers, research papers, books, magazines, and eBooks, using state-of-the-art equipment and processes.
-                  Our digital print-on-demand facilities enable us to meet tight deadlines and deliver high-quality
+                  Our digital print-on-demand and offset facilities enable us to meet tight deadlines and deliver high-quality
                   publications quickly.
                 </p>
               </div>
@@ -348,7 +348,7 @@ export default function MagnumPublishingSPA() {
               <div className="flex flex-wrap gap-2 justify-center">
                 <Badge variant="secondary">International-grade printing</Badge>
                 <Badge variant="secondary">Digital print-on-demand</Badge>
-                <Badge variant="secondary">Offset printing,</Badge>
+                <Badge variant="secondary">Offset printing</Badge>
                 <Badge variant="secondary">Hardcase binding</Badge>
                 <Badge variant="secondary">Section sewing and perfect binding</Badge>
               </div>
