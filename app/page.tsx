@@ -28,6 +28,8 @@ export default function MagnumPublishingSPA() {
     projectType: '',
     message: ''
   })
+  const [status, setStatus] = useState<'pending' | 'ok' | 'error' | null>(null)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const handleShowScrollTop = () => {
@@ -453,7 +455,12 @@ export default function MagnumPublishingSPA() {
 
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">Start Your Project</h3>
-              <form name="contact" className="space-y-6" onSubmit={(e) => {
+              <form 
+                name="contact" 
+                method="POST" 
+                data-netlify="true" 
+                className="space-y-6" 
+                onSubmit={async (e) => {
                 e.preventDefault();
                 if (formData.name.trim() === '') {
                   setErrors({ ...errors, name: 'Name is required' });
@@ -471,12 +478,42 @@ export default function MagnumPublishingSPA() {
                   setErrors({ ...errors, message: 'Message must be at least 10 characters long' });
                   return;
                 }
-                // If all validations pass, you can submit the form
-                alert('Form submitted successfully!');
-              }} data-netlify="true">
+
+                try {
+                  setStatus('pending');
+                  setError(null);
+                  const form = e.target as HTMLFormElement;
+                  const formDataObj = new FormData(form);
+                  const res = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams([
+                      ['form-name', 'contact'],
+                      ...Array.from(formDataObj.entries()).map(([key, value]) => [key, value.toString()])
+                    ]).toString()
+                  });
+                  if (res.status === 200) {
+                    setStatus('ok');
+                    setFormData({
+                      name: '',
+                      email: '',
+                      projectType: 'Select project type',
+                      message: ''
+                    });
+                  } else {
+                    setStatus('error');
+                    setError(`${res.status} ${res.statusText}`);
+                  }
+                } catch (err) {
+                  setStatus('error');
+                  setError(`${err}`);
+                }
+              }}>
+                <input type="hidden" name="form-name" value="contact" />
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                   <input
+                    name="name"
                     type="text"
                     value={formData.name}
                     onChange={(e) => {
@@ -493,6 +530,7 @@ export default function MagnumPublishingSPA() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                   <input
+                    name="email"
                     type="email"
                     value={formData.email}
                     onChange={(e) => {
@@ -509,6 +547,7 @@ export default function MagnumPublishingSPA() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Project Type</label>
                   <select 
+                    name="projectType"
                     value={formData.projectType}
                     onChange={(e) => {
                       setFormData({ ...formData, projectType: e.target.value });
@@ -530,6 +569,7 @@ export default function MagnumPublishingSPA() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                   <textarea
+                    name="message"
                     rows={4}
                     value={formData.message}
                     onChange={(e) => {
@@ -543,10 +583,21 @@ export default function MagnumPublishingSPA() {
                   ></textarea>
                   {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
                 </div>
-                <Button type="submit" className="w-full bg-[rgb(250,165,27)] hover:bg-[rgb(250,165,27)]/90" size="lg">
-                  Send Message
+                <Button 
+                  type="submit" 
+                  className="w-full bg-[rgb(250,165,27)] hover:bg-[rgb(250,165,27)]/90" 
+                  size="lg"
+                  disabled={status === 'pending'}
+                >
+                  {status === 'pending' ? 'Sending...' : 'Send Message'}
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
+                {status === 'ok' && (
+                  <p className="mt-4 text-sm text-green-600 text-center">Message sent successfully!</p>
+                )}
+                {status === 'error' && (
+                  <p className="mt-4 text-sm text-red-600 text-center">Error: {error}</p>
+                )}
               </form>
             </div>
           </div>
