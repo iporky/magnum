@@ -9,8 +9,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { PortfolioShowcase } from "@/components/portfolio-showcase"
-import { CategoryGallery } from "@/components/category-gallery"
-import { getDisplayableCategories } from "@/data/portfolio-categories"
 
 export default function MagnumPublishingSPA() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
