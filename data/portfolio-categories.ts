@@ -38,7 +38,7 @@ export const portfolioCategories: PortfolioCategory[] = [
       },
       {
         title: "Don't Go To Prison After College",
-        description: "Self-published career guidance book for recent graduates",
+        description: "Self-published career guidance book",
         image: "/images/categories/Self-publishing/Don't go to prison after college.jpg",
         author: "Jatin Bhandari",
       },
@@ -77,7 +77,7 @@ export const portfolioCategories: PortfolioCategory[] = [
   {
     id: "think-tanks-defence-security",
     name: "Think Tanks, Defence and Security Issues",
-    description: "Research publications on defense strategies, security studies, and policy analysis",
+    description: "Research publications on defence strategies, security studies, and policy analysis",
     images: [
       {
         title: "Balochistan-Forgotten War, Forsaken People",
@@ -93,7 +93,7 @@ export const portfolioCategories: PortfolioCategory[] = [
       },
       {
         title: "India's Israel Policy",
-        description: "Historical analysis and future prospects of India-Israel diplomatic and defense relations",
+        description: "Historical analysis and future prospects of India-Israel diplomatic and defence relations",
         image: "/images/categories/Think Tanks, Defence and Security Issues/India's Israel Policy.jpg",
         author: "Jawaharlal Nehru University Press",
       },
@@ -105,7 +105,7 @@ export const portfolioCategories: PortfolioCategory[] = [
       },
       {
         title: "Make In India",
-        description: "Strategic assessment of defense manufacturing initiatives under the Make in India program",
+        description: "Strategic assessment of defence manufacturing initiatives under the Make in India program",
         image: "/images/categories/Think Tanks, Defence and Security Issues/Make In India.jpg",
         author: "Defence Research and Development Organisation",
       },
@@ -199,7 +199,7 @@ export const portfolioCategories: PortfolioCategory[] = [
   {
     id: "foreign-languages",
     name: "Foreign Languages - French, Rus, Spanish",
-    description: "Publications and educational materials in French, Russian, Spanish and other foreign languages",
+    description: "Publications in French, Russian, Spanish and other foreign languages",
     images: [
       {
         title: "French Agriculture Adaptation",
@@ -258,8 +258,8 @@ export const portfolioCategories: PortfolioCategory[] = [
     ],
   },
   {
-    id: "climate-change-mitigation-adaptation",
-    name: "Climate Change Mitigation Studies",
+    id: "Climate Change Mitigation and Adaptation",
+    name: "Climate Change Mitigation and Adaptation",
     description: "Research publications and reports on climate change solutions and environmental studies",
     images: [
       {
@@ -267,56 +267,56 @@ export const portfolioCategories: PortfolioCategory[] = [
         description:
           "UNEP publication analyzing current trends and future projections for sustainable development in India",
         image:
-          "/images/categories/climate-change-mitigation-adaptation/energy-development-climate-priorities-india.jpeg",
+          "/images/categories/Climate Change Mitigation and Adaptation/energy-development-climate-priorities-india.jpeg",
         author: "PR Shukla, Amit Garg, Subash Dhar, Kristen Halsnaes",
       },
       {
         title: "Enhancing Energy Efficiency in India: Assessment of Sectoral Potentials",
         description: "Comprehensive assessment of energy efficiency opportunities across various sectors in India",
-        image: "/images/categories/climate-change-mitigation-adaptation/enhancing-energy-efficiency-india.jpeg",
+        image: "/images/categories/Climate Change Mitigation and Adaptation/enhancing-energy-efficiency-india.jpeg",
         author: "UN Environment & Partners",
       },
       {
         title: "A Toolkit for Preparation of Low Carbon Mobility Plan",
         description: "UNEP DTU Partnership toolkit for developing sustainable urban mobility solutions",
-        image: "/images/categories/climate-change-mitigation-adaptation/low-carbon-mobility-plan.jpeg",
+        image: "/images/categories/Climate Change Mitigation and Adaptation/low-carbon-mobility-plan.jpeg",
         author: "UNEP DTU Partnership",
       },
       {
         title: "Energy Access Realities in Urban Poor Communities of Developing Countries",
         description: "GNESD report on energy poverty and access challenges in urban informal settlements",
-        image: "/images/categories/climate-change-mitigation-adaptation/gnesd-energy-access-urban-poor.jpeg",
+        image: "/images/categories/Climate Change Mitigation and Adaptation/gnesd-energy-access-urban-poor.jpeg",
         author: "GNESD & UNEP",
       },
       {
         title: "From Vulnerability to Resilience: The Challenge of Adaptation to Climate Change",
         description: "Multi-country case studies from Bangladesh, Brazil, China, India, South Africa and Korea",
-        image: "/images/categories/climate-change-mitigation-adaptation/adaptation-climate-change-multi-country.jpeg",
+        image: "/images/categories/Climate Change Mitigation and Adaptation/adaptation-climate-change-multi-country.jpeg",
         author: "Amit Garg, Woo-Jin Han, Jin Hwan Hwang, Jung Eun Kim, Kristen Halsnaes",
       },
       {
         title: "Promoting Low Carbon Transport in India",
         description: "UNEP DTU Partnership publication on sustainable transportation solutions for India",
-        image: "/images/categories/climate-change-mitigation-adaptation/low-carbon-transport-india.jpeg",
+        image: "/images/categories/Climate Change Mitigation and Adaptation/low-carbon-transport-india.jpeg",
         author: "UNEP DTU Partnership",
       },
       {
         title:
           "Good Practice in Designing and Implementing National Monitoring Systems for Adaptation to Climate Change",
         description: "CATIE and CTCN guide for developing climate adaptation monitoring frameworks",
-        image: "/images/categories/climate-change-mitigation-adaptation/monitoring-systems-adaptation.jpeg",
+        image: "/images/categories/Climate Change Mitigation and Adaptation/monitoring-systems-adaptation.jpeg",
         author: "CATIE & CTCN",
       },
       {
         title: "Climate-Smart Agriculture Manual for Agriculture Education in Zimbabwe",
         description: "Educational manual promoting sustainable agricultural practices and climate resilience",
-        image: "/images/categories/climate-change-mitigation-adaptation/climate-smart-agriculture-manual.jpeg",
+        image: "/images/categories/Climate Change Mitigation and Adaptation/climate-smart-agriculture-manual.jpeg",
         author: "Government of Zimbabwe",
       },
       {
         title: "Enhancing Energy Efficiency in China: Assessment of Sectoral Potentials",
         description: "UN Environment assessment of energy efficiency opportunities across Chinese industrial sectors",
-        image: "/images/categories/climate-change-mitigation-adaptation/enhancing-energy-efficiency-china.jpeg",
+        image: "/images/categories/Climate Change Mitigation and Adaptation/enhancing-energy-efficiency-china.jpeg",
         author: "UN Environment & Partners",
       },
     ],
@@ -339,8 +339,8 @@ export const portfolioCategories: PortfolioCategory[] = [
         author: "Ministry of Consumer Affairs",
       },
       {
-        title: "Civil Defense Cover",
-        description: "Official guidelines for civil defense procedures and emergency preparedness",
+        title: "Civil Defence Cover",
+        description: "Official guidelines for civil defence procedures and emergency preparedness",
         image: "/images/categories/Government of India/Civil Defense Cover.jpg",
         author: "National Disaster Management Authority",
       },
@@ -383,44 +383,44 @@ export const portfolioCategories: PortfolioCategory[] = [
     ],
   },
   {
-    id: "corporate-social-responsibility",
+    id: "Corporate Social Responsibility",
     name: "Corporate Social Responsibility",
     description: "Publications focusing on CSR initiatives, sustainability reports, and corporate governance",
     images: [
       {
         title: "Fostering Business Responsibility in MSME Clusters - Volume I",
         description: "Role of Policy Makers in promoting business responsibility among MSME clusters",
-        image: "/images/categories/corporate-social-responsibility/fostering-business-responsibility-vol1.jpeg",
+        image: "/images/categories/Corporate Social Responsibility/fostering-business-responsibility-vol1.jpeg",
         author: "Indian Institute of Corporate Affairs & GIZ",
       },
       {
         title: "Fostering Business Responsibility in MSME Clusters - Volume II",
         description: "Role of Implementing Agencies in fostering business responsibility in MSME clusters",
-        image: "/images/categories/corporate-social-responsibility/fostering-business-responsibility-vol2.jpeg",
+        image: "/images/categories/Corporate Social Responsibility/fostering-business-responsibility-vol2.jpeg",
         author: "Indian Institute of Corporate Affairs & GIZ",
       },
       {
         title: "Fostering Business Responsibility in MSME Clusters - Volume III",
         description: "Role of Cluster Development Agents in promoting sustainable business practices",
-        image: "/images/categories/corporate-social-responsibility/fostering-business-responsibility-vol3.jpeg",
+        image: "/images/categories/Corporate Social Responsibility/fostering-business-responsibility-vol3.jpeg",
         author: "Indian Institute of Corporate Affairs & GIZ",
       },
       {
         title: "The Contribution of Responsible Business to Social Inclusiveness in India",
         description: "Focus on innovative approaches for responsible business practices and social inclusion",
-        image: "/images/categories/corporate-social-responsibility/responsible-business-social-inclusiveness.jpeg",
+        image: "/images/categories/Corporate Social Responsibility/responsible-business-social-inclusiveness.jpeg",
         author: "Indian Institute of Corporate Affairs & GIZ",
       },
       {
         title: "Mapping Energy, Environment and Social Issues among MSME Clusters in India",
         description: "Way Forward for addressing sustainability challenges in MSME clusters",
-        image: "/images/categories/corporate-social-responsibility/mapping-energy-environment-social-issues.jpeg",
+        image: "/images/categories/Corporate Social Responsibility/mapping-energy-environment-social-issues.jpeg",
         author: "Indian Institute of Corporate Affairs & GIZ",
       },
       {
         title: "Responsible Corporate Engagement in Rural India",
         description: "A Compendium of Good Practices for corporate social responsibility in rural areas",
-        image: "/images/categories/corporate-social-responsibility/compendium-good-practices.jpeg",
+        image: "/images/categories/Corporate Social Responsibility/compendium-good-practices.jpeg",
         author: "Corporate Social Responsibility Research",
       },
     ],
@@ -455,8 +455,8 @@ export const portfolioCategories: PortfolioCategory[] = [
         author: "Green Education Initiative",
       },
       {
-        title: "Hindi",
-        description: "Advanced Hindi grammar and literature textbook for secondary education",
+        title: "Workbook",
+        description: "Practice workbooks and assignment sheets",
         image: "/images/categories/School Books/Hindi.jpg",
         author: "National Language Council",
       },
@@ -487,62 +487,62 @@ export const portfolioCategories: PortfolioCategory[] = [
     ],
   },
   {
-    id: "childrens-books-regional-languages",
+    id: "Children's Books in Regional Languages",
     name: "Children's Books in Regional Languages",
     description: "Educational and entertaining books for children in multiple Indian languages",
     images: [
       {
         title: "Gujarati Spring",
-        description: "A colorful children's book teaching about spring season in Gujarati language",
-        image: "/images/categories/childrens-books-regional-languages/gujarati-spring.jpeg",
+        description: "A colorful children's book depicting spring season in Gujarati language",
+        image: "/images/categories/Children's Books in Regional Languages/gujarati-spring.jpeg",
         author: "Read India Books",
       },
       {
         title: "Telugu Summer",
         description: "Children's book about summer activities in Telugu language",
-        image: "/images/categories/childrens-books-regional-languages/telugu-summer.jpeg",
+        image: "/images/categories/Children's Books in Regional Languages/telugu-summer.jpeg",
         author: "Read India Books",
       },
       {
         title: "Punjabi Monsoon",
         description: "Educational book about monsoon season in Punjabi language",
-        image: "/images/categories/childrens-books-regional-languages/punjabi-monsoon.jpeg",
+        image: "/images/categories/Children's Books in Regional Languages/punjabi-monsoon.jpeg",
         author: "Read India Books",
       },
       {
         title: "Hindi Monsoon",
         description: "Educational book about monsoon season in Hindi language",
-        image: "/images/categories/childrens-books-regional-languages/hindi-monsoon.jpeg",
+        image: "/images/categories/Children's Books in Regional Languages/hindi-monsoon.jpeg",
         author: "Read India Books",
       },
       {
         title: "Urdu Winter",
         description: "Children's book about winter season in Urdu language",
-        image: "/images/categories/childrens-books-regional-languages/urdu-winter.jpeg",
+        image: "/images/categories/Children's Books in Regional Languages/urdu-winter.jpeg",
         author: "Read India Books",
       },
       {
         title: "Guddu Learns to Ride",
         description: "Story about a boy learning to ride a bicycle in Hindi",
-        image: "/images/categories/childrens-books-regional-languages/guddu-learns-to-ride-hindi.jpeg",
+        image: "/images/categories/Children's Books in Regional Languages/guddu-learns-to-ride-hindi.jpeg",
         author: "Arvind Passi & Subinita Deshmukh",
       },
       {
         title: "Bengali Spring",
         description: "Educational book about spring season in Bengali language",
-        image: "/images/categories/childrens-books-regional-languages/bengali-spring.jpeg",
+        image: "/images/categories/Children's Books in Regional Languages/bengali-spring.jpeg",
         author: "Read India Books",
       },
       {
         title: "Guddu Learns to Ride (Telugu)",
         description: "Story about a boy learning to ride a bicycle in Telugu",
-        image: "/images/categories/childrens-books-regional-languages/guddu-learns-to-ride-telugu.jpeg",
+        image: "/images/categories/Children's Books in Regional Languages/guddu-learns-to-ride-telugu.jpeg",
         author: "Arvind Passi & Amit Adhikari",
       },
       {
         title: "Guddu and the Mangoes",
         description: "Story about a boy's adventure with mangoes in Hindi",
-        image: "/images/categories/childrens-books-regional-languages/guddu-and-the-mangoes-hindi.jpeg",
+        image: "/images/categories/Children's Books in Regional Languages/guddu-and-the-mangoes-hindi.jpeg",
         author: "Arvind Passi & Subinita Deshmukh",
       },
     ],

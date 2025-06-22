@@ -16,6 +16,20 @@ export default function MagnumPublishingSPA() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
   const [showScrollTop, setShowScrollTop] = useState(false)
+  
+  // Form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    projectType: 'Select project type',
+    message: ''
+  })
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    projectType: '',
+    message: ''
+  })
 
   useEffect(() => {
     const handleShowScrollTop = () => {
@@ -318,10 +332,10 @@ export default function MagnumPublishingSPA() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+      <section id="services" className="py-10 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8">
+          <div className="text-center mb-15">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Our Services</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We offer end-to-end services from ideation to print production as well as standalone services to meet
               your specific publishing needs.
@@ -358,31 +372,14 @@ export default function MagnumPublishingSPA() {
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Work</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Showcasing our diverse portfolio of publications across various industries and formats.
-            </p>
-          </div>
-
-          {/* Portfolio categories grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-            {getDisplayableCategories().map((category) => (
-              <CategoryGallery key={category.id} category={category.name} images={category.images} />
-            ))}
-          </div>
-
-          <PortfolioShowcase />
-
-        </div>
+      <section id="portfolio" className="py-10 bg-white">
+        <PortfolioShowcase />
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50">
+      <section id="contact" className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-15">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Ready to bring your publishing project to life? Let&apos;s discuss how we can help you create high-quality
@@ -458,26 +455,71 @@ export default function MagnumPublishingSPA() {
 
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">Start Your Project</h3>
-              <form className="space-y-6">
+              <form name="contact" className="space-y-6" onSubmit={(e) => {
+                e.preventDefault();
+                if (formData.name.trim() === '') {
+                  setErrors({ ...errors, name: 'Name is required' });
+                  return;
+                }
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+                  setErrors({ ...errors, email: 'Please enter a valid email' });
+                  return;
+                }
+                if (formData.projectType === 'Select project type') {
+                  setErrors({ ...errors, projectType: 'Please select a project type' });
+                  return;
+                }
+                if (formData.message.trim().length < 10) {
+                  setErrors({ ...errors, message: 'Message must be at least 10 characters long' });
+                  return;
+                }
+                // If all validations pass, you can submit the form
+                alert('Form submitted successfully!');
+              }} data-netlify="true">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    value={formData.name}
+                    onChange={(e) => {
+                      setFormData({ ...formData, name: e.target.value });
+                      if (errors.name) setErrors({ ...errors, name: '' });
+                    }}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent ${
+                      errors.name ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Your full name"
                   />
+                  {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                   <input
                     type="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    value={formData.email}
+                    onChange={(e) => {
+                      setFormData({ ...formData, email: e.target.value });
+                      if (errors.email) setErrors({ ...errors, email: '' });
+                    }}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent ${
+                      errors.email ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="your@email.com"
                   />
+                  {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Project Type</label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                  <select 
+                    value={formData.projectType}
+                    onChange={(e) => {
+                      setFormData({ ...formData, projectType: e.target.value });
+                      if (errors.projectType) setErrors({ ...errors, projectType: '' });
+                    }}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent ${
+                      errors.projectType ? 'border-red-500' : 'border-gray-300'
+                    }`}
+                  >
                     <option>Select project type</option>
                     <option>Book Publishing</option>
                     <option>Corporate Publication</option>
@@ -485,16 +527,25 @@ export default function MagnumPublishingSPA() {
                     <option>Magazine/Journal</option>
                     <option>Other</option>
                   </select>
+                  {errors.projectType && <p className="mt-1 text-sm text-red-500">{errors.projectType}</p>}
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                   <textarea
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    value={formData.message}
+                    onChange={(e) => {
+                      setFormData({ ...formData, message: e.target.value });
+                      if (errors.message) setErrors({ ...errors, message: '' });
+                    }}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent ${
+                      errors.message ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Tell us about your project..."
                   ></textarea>
+                  {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
                 </div>
-                <Button className="w-full bg-[rgb(250,165,27)] hover:bg-[rgb(250,165,27)]/90" size="lg">
+                <Button type="submit" className="w-full bg-[rgb(250,165,27)] hover:bg-[rgb(250,165,27)]/90" size="lg">
                   Send Message
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>

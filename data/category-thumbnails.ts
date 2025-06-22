@@ -1,6 +1,6 @@
 export const CATEGORY_THUMBNAILS: Record<string, string> = {
   "Children's Books in Regional Languages": "gujarati-spring.jpeg",
-  "Climate Change Mitigation & Adaptation": "enhancing-energy-efficiency-india.jpeg",
+  "Climate Change Mitigation and Adaptation": "enhancing-energy-efficiency-india.jpeg",
   "Corporate Social Responsibility": "fostering-business-responsibility-vol1.jpeg",
   "Foreign Languages - French, Rus, Spanish": "French Agriculture adaptation.jpg",
   "Global Consultants, Trade Organisations": "Asset Management.jpg",

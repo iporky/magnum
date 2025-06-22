@@ -10,19 +10,19 @@ import { CATEGORY_THUMBNAILS } from "@/data/category-thumbnails"
 import { CategoryGallery } from "@/components/category-gallery"
 
 export function PortfolioShowcase() {
-  // Select a few featured categories to highlight
-  const featuredCategories = portfolioCategories.slice(0, 4)
+  // Get all categories to display
+  const featuredCategories = portfolioCategories
   
   // State to manage the gallery dialogs
   const [openGallery, setOpenGallery] = useState<string | null>(null)
   
   return (
     <div className="pt-16 pb-16 bg-[rgba(250,165,27,0.08)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+      <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-8">
+        <div className="text-center mb-10">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Featured Categories</h3>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Explore our diverse portfolio across specialized publishing categories.
+            Explore our diverse portfolio across publishing categories.
           </p>
         </div>
 
@@ -32,23 +32,31 @@ export function PortfolioShowcase() {
               key={index} 
               className="overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
             >
-              <div className="relative h-80 lg:h-96 bg-white flex items-center justify-center">
+              <div 
+                className="relative h-80 lg:h-96 bg-white flex items-center justify-center overflow-hidden group cursor-pointer"
+                onClick={() => setOpenGallery(category.id)}
+              >
                 <Image 
                   src={`/images/categories/${category.name}/${CATEGORY_THUMBNAILS[category.name] || "placeholder.svg"}`} 
                   alt={category.name} 
                   fill 
-                  className="object-contain" 
+                  className="object-contain group-hover:scale-105 transition-transform duration-500" 
                 />
-              </div>
-              <CardContent className="p-6 sm:p-8">
-                <div className="mb-6">
-                  <Badge 
-                    className="bg-[rgb(250,165,27)] hover:bg-[rgb(250,165,27)]/90 active:scale-95 text-white cursor-pointer text-xs sm:text-xs md:text-sm lg:text-base px-4 py-1.5 shadow-sm hover:shadow-md transition-all duration-200 ease-in-out rounded-md hover:-translate-y-0.5"
-                    onClick={() => setOpenGallery(category.id)}
-                  >
-                    {category.name}
-                  </Badge>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="text-white p-4 w-full">
+                    <p className="text-sm font-medium text-center">Click to view gallery</p>
+                  </div>
                 </div>
+              </div>
+              <CardContent className="p-6 sm:p-6">
+              <div className="mb-6 flex justify-center">
+                <Badge 
+                  className="bg-[rgb(250,165,27)] hover:bg-[rgb(250,165,27)]/90 active:scale-95 text-white cursor-pointer text-xs sm:text-xs md:text-sm lg:text-base px-4 py-1.5 shadow-sm hover:shadow-md transition-all duration-200 ease-in-out rounded-md hover:-translate-y-0.5"
+                  onClick={() => setOpenGallery(category.id)}
+                >
+                  {category.name}
+                </Badge>
+              </div>
                 <p className="text-gray-600 mb-6">{category.description}</p>
                 <div className="space-y-4">
                   <div>
