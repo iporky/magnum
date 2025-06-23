@@ -17,7 +17,7 @@ export function PortfolioShowcase() {
   const [openGallery, setOpenGallery] = useState<string | null>(null)
   
   return (
-    <div className="pt-16 pb-16 bg-[rgba(250,165,27,0.08)]">
+    <div className="pt-16 pb-16 bg-[rgba(250,165,27,0.06)]">
       <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-8">
         <div className="text-center mb-10">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Featured Categories</h3>
@@ -30,10 +30,10 @@ export function PortfolioShowcase() {
           {featuredCategories.map((category, index) => (
             <Card 
               key={index} 
-              className="overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
+              className="overflow-hidden shadow-xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.25)] transition-all duration-300 drop-shadow-xl hover:drop-shadow-[0_20px_35px_rgba(0,0,0,0.2)]"
             >
               <div 
-                className="relative h-80 lg:h-96 bg-white flex items-center justify-center overflow-hidden group cursor-pointer"
+                className="relative h-80 lg:h-96 flex items-center justify-center overflow-hidden group cursor-pointer drop-shadow-xl hover:drop-shadow-[0_15px_30px_rgba(0,0,0,0.2)]"
                 onClick={() => setOpenGallery(category.id)}
               >
                 <Image 

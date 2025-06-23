@@ -333,6 +333,18 @@ export const portfolioCategories: PortfolioCategory[] = [
         author: "Bureau of Indian Standards",
       },
       {
+        title: " India's Trillion-Dollar Digital Opportunity",
+        description: "Strategic framework for India's digital transformation initiatives",
+        image: "/images/categories/Government of India/Digital India.jpg",
+        author: "Ministry of Electronics & Information Technology",
+      },
+      {
+        title: "National Policy on Disaster Management",
+        description: "Government policy document on national security and emergency response",
+        image: "/images/categories/Government of India/Cover Policy.jpg",
+        author: "Ministry of Home Affairs",
+      },
+      {
         title: "BIS History",
         description: "Comprehensive history of the Bureau of Indian Standards and its evolution",
         image: "/images/categories/Government of India/BIS History.jpg",
@@ -343,18 +355,6 @@ export const portfolioCategories: PortfolioCategory[] = [
         description: "Official guidelines for civil defence procedures and emergency preparedness",
         image: "/images/categories/Government of India/Civil Defense Cover.jpg",
         author: "National Disaster Management Authority",
-      },
-      {
-        title: "Cover Policy",
-        description: "Government policy document on national security and emergency response",
-        image: "/images/categories/Government of India/Cover Policy.jpg",
-        author: "Ministry of Home Affairs",
-      },
-      {
-        title: "Digital India",
-        description: "Strategic framework for India's digital transformation initiatives",
-        image: "/images/categories/Government of India/Digital India.jpg",
-        author: "Ministry of Electronics & Information Technology",
       },
       {
         title: "Earthquake Hindi",
@@ -394,6 +394,18 @@ export const portfolioCategories: PortfolioCategory[] = [
         author: "Indian Institute of Corporate Affairs & GIZ",
       },
       {
+        title: "Mapping Energy, Environment and Social Issues among MSME Clusters in India",
+        description: "Way Forward for addressing sustainability challenges in MSME clusters",
+        image: "/images/categories/Corporate Social Responsibility/mapping-energy-environment-social-issues.jpeg",
+        author: "Indian Institute of Corporate Affairs & GIZ",
+      },
+      {
+        title: "Responsible Corporate Engagement in Rural India",
+        description: "A Compendium of Good Practices for corporate social responsibility in rural areas",
+        image: "/images/categories/Corporate Social Responsibility/compendium-good-practices.jpeg",
+        author: "Corporate Social Responsibility Research",
+      },
+      {
         title: "Fostering Business Responsibility in MSME Clusters - Volume II",
         description: "Role of Implementing Agencies in fostering business responsibility in MSME clusters",
         image: "/images/categories/Corporate Social Responsibility/fostering-business-responsibility-vol2.jpeg",
@@ -410,40 +422,28 @@ export const portfolioCategories: PortfolioCategory[] = [
         description: "Focus on innovative approaches for responsible business practices and social inclusion",
         image: "/images/categories/Corporate Social Responsibility/responsible-business-social-inclusiveness.jpeg",
         author: "Indian Institute of Corporate Affairs & GIZ",
-      },
-      {
-        title: "Mapping Energy, Environment and Social Issues among MSME Clusters in India",
-        description: "Way Forward for addressing sustainability challenges in MSME clusters",
-        image: "/images/categories/Corporate Social Responsibility/mapping-energy-environment-social-issues.jpeg",
-        author: "Indian Institute of Corporate Affairs & GIZ",
-      },
-      {
-        title: "Responsible Corporate Engagement in Rural India",
-        description: "A Compendium of Good Practices for corporate social responsibility in rural areas",
-        image: "/images/categories/Corporate Social Responsibility/compendium-good-practices.jpeg",
-        author: "Corporate Social Responsibility Research",
-      },
+      }
     ],
   },
   {
     id: "school-books",
     name: "School Books",
-    description: "Educational textbooks and learning materials for school curricula",
+    description: "Textbooks and learning materials for school curricula",
     images: [
       {
-        title: "DPS Colours & Shapes",
+        title: "DPS Gurgaon",
         description: "Early learning textbook teaching colors and shapes recognition for preschool students",
         image: "/images/categories/School Books/DPS Colours & Shapes.jpg",
         author: "Delhi Public School Publications",
       },
       {
-        title: "DPS Ka Kha Ga",
+        title: "Lotus Valley Gurgaon ",
         description: "Hindi alphabet introduction textbook for primary education",
         image: "/images/categories/School Books/DPS Ka Kha Ga.jpg",
         author: "Delhi Public School Publications",
       },
       {
-        title: "English",
+        title: "Mayoor School Noida and other schools",
         description: "Comprehensive English language and literature textbook for middle school students",
         image: "/images/categories/School Books/English.jpg",
         author: "National Education Board",

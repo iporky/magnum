@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { PortfolioShowcase } from "@/components/portfolio-showcase"
+import { ReviewCarousel } from "@/components/review-carousel"
+import reviewsData from "@/data/reviews.json"
 
 export default function MagnumPublishingSPA() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -182,8 +184,8 @@ export default function MagnumPublishingSPA() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-16 bg-gradient-to-br from-orange-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section id="home" className="pt-16 bg-gradient-to-br from-[rgba(250,165,27,0.15)] to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="text-center max-w-4xl mx-auto">
             <div className="flex justify-center mb-2">
               <div className="w-40 h-40 rounded-full flex items-center justify-center overflow-hidden">
@@ -216,7 +218,7 @@ export default function MagnumPublishingSPA() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main About Content */}
           <div className="text-center mb-16">
@@ -287,7 +289,7 @@ export default function MagnumPublishingSPA() {
           </div>
 
           {/* Our Approach Section */}
-          <div className="mt-20 bg-gray-50 rounded-2xl p-8 lg:p-12">
+          <div className="mt-20 bg-gray-100 rounded-2xl p-8 lg:p-12">
             <div className="text-center mb-12">
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our Approach</h3>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -332,7 +334,7 @@ export default function MagnumPublishingSPA() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-10 bg-gray-50">
+      <section id="services" className="py-10 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8">
           <div className="text-center mb-15">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Our Services</h2>
@@ -376,8 +378,14 @@ export default function MagnumPublishingSPA() {
         <PortfolioShowcase />
       </section>
 
+      {/* Reviews Section */}
+      <section id="reviews" className="py-16 bg-white relative z-0 border-t border-gray-100">
+        <ReviewCarousel reviews={reviewsData.reviews} />
+      </section>
+
+
       {/* Contact Section */}
-      <section id="contact" className="py-10 bg-gray-50">
+      <section id="contact" className="py-10 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-15">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
@@ -392,7 +400,7 @@ export default function MagnumPublishingSPA() {
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <Mail className="w-6 h-6 text-[rgb(250,165,27)]" />
                   </div>
                   <div>
@@ -407,7 +415,7 @@ export default function MagnumPublishingSPA() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <Image
                       src="/WhatsApp.webp"
                       alt="WhatsApp"

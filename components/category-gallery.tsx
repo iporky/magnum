@@ -46,7 +46,7 @@ export function CategoryGallery({
       {showThumbnail && (
         <div className="group cursor-pointer" onClick={() => setIsOpen(true)}>
           <div className="flex flex-col gap-4">
-            <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
+            <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 drop-shadow-md hover:drop-shadow-xl">
               <div style={{ aspectRatio: 3 / 4 }} className="relative">
                 <Image
                   src={thumbnailImage.image || "/placeholder.svg"}
@@ -87,7 +87,7 @@ export function CategoryGallery({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {images.map((image, index) => (
                 <div key={index} className="group cursor-pointer" onClick={() => setSelectedImage(image)}>
-                  <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+                  <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 drop-shadow-md hover:drop-shadow-xl">
                     <div style={{ aspectRatio: category === "Children's Books in Regional Languages" ? 1.5 : 3 / 4.2 }} className="relative">
                       <Image
                         src={image.image || "/placeholder.svg"}
@@ -128,7 +128,7 @@ export function CategoryGallery({
             >
               <X className="h-5 w-5" />
             </button>
-            <div className="relative aspect-[3/4] w-full sm:max-h-[60vh]">
+            <div className="relative aspect-[3/4] w-full sm:max-h-[60vh] drop-shadow-xl">
               <Image
                 src={selectedImage.image || "/placeholder.svg"}
                 alt={selectedImage.title}
