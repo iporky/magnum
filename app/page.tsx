@@ -151,7 +151,7 @@ export default function MagnumPublishingSPA() {
                   <span>Email Us</span>
                 </a>
                 <a
-                  href="https://wa.me/919811097054?text=I'm%20interested%20in%20publishing%20services"
+                  href="https://wa.me/919811097054?text=I&apos;m%20interested%20in%20publishing%20services"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2 px-4 py-2 bg-[rgb(250,165,27)] text-white text-sm font-semibold rounded-lg hover:bg-orange-500 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
@@ -212,7 +212,7 @@ export default function MagnumPublishingSPA() {
                     </div>
                   </a>
                   <a
-                    href="https://wa.me/919811097054?text=I'm%20interested%20in%20publishing%20services"
+                    href="https://wa.me/919811097054?text=I&apos;m%20interested%20in%20publishing%20services"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 px-4 py-3 bg-[rgb(250,165,27)] text-white hover:bg-orange-500 transition-all duration-200 rounded-lg shadow-md"
@@ -363,7 +363,7 @@ export default function MagnumPublishingSPA() {
                   <p className="text-lg">
                     Custom publishing refers to the tailored creation of publications and reports for organizations,
                     institutions, businesses, and individuals seeking self-publishing services. This process involves
-                    producing high-quality materials that effectively communicate an organization's message, values, and
+                    producing high-quality materials that effectively communicate an organization&apos;s message, values, and
                     goals.
                   </p>
                   <p className="text-lg">
@@ -386,12 +386,12 @@ export default function MagnumPublishingSPA() {
                 </div>
                 <div className="space-y-6 text-gray-600 leading-relaxed">
                   <p className="text-lg">
-                    As a custom publisher, our story is told through the diverse range of publications we've produced. Our
+                    As a custom publisher, our story is told through the diverse range of publications we&apos;ve produced. Our
                     titles cover a broad spectrum including Climate Change, Government Publications, Defence and Security, reports for Global Consultants and Trade
-                    Organizations, Educational Materials and Children's Books.
+                    Organizations, Educational Materials and Children&apos;s Books.
                   </p>
                   <p className="text-lg">
-                    We've successfully published personal and corporate publications, such as self published books, annual reports, white
+                    We&apos;ve successfully published personal and corporate publications, such as self published books, annual reports, white
                     papers, research papers, books, magazines, and eBooks, using state-of-the-art equipment and processes.
                     Our digital print-on-demand and offset facilities enable us to meet tight deadlines and deliver high-quality
                     publications quickly.
@@ -554,7 +554,7 @@ export default function MagnumPublishingSPA() {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Get In Touch</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Ready to bring your publishing project to life? Let's discuss how we can help you create high-quality
+              Ready to bring your publishing project to life? Let&apos;s discuss how we can help you create high-quality
               publications that exceed your expectations.
             </p>
           </div>
@@ -580,7 +580,7 @@ export default function MagnumPublishingSPA() {
                       >
                         arvind@magnumcustompublishing.com
                       </a>
-                      <p className="text-gray-500 text-sm mt-1">We'll respond within 24 hours</p>
+                      <p className="text-gray-500 text-sm mt-1">We&apos;ll respond within 24 hours</p>
                     </div>
                   </div>                  <div className="group flex items-start space-x-3 p-3 rounded-2xl hover:bg-orange-50/50 transition-all duration-300">
                     <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-green-100 to-green-50 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -595,7 +595,7 @@ export default function MagnumPublishingSPA() {
                     <div>
                       <h4 className="font-bold text-gray-900 text-lg mb-2">WhatsApp</h4>
                       <a
-                        href="https://wa.me/919811097054?text=I'm%20interested%20in%20publishing%20services"
+                        href="https://wa.me/919811097054?text=I&apos;m%20interested%20in%20publishing%20services"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-[rgb(250,165,27)] hover:text-orange-600 transition-colors text-lg font-medium flex items-center gap-2"
@@ -797,7 +797,7 @@ export default function MagnumPublishingSPA() {
                   
                   {status === 'ok' && (
                     <div className="p-4 bg-green-50 border border-green-200 rounded-xl">
-                      <p className="text-green-600 font-medium text-center">✨ Message sent successfully! We'll get back to you soon.</p>
+                      <p className="text-green-600 font-medium text-center">✨ Message sent successfully! We&apos;ll get back to you soon.</p>
                     </div>
                   )}
                   {status === 'error' && (
