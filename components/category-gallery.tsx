@@ -67,18 +67,19 @@ export function CategoryGallery({
             </div>
           </div>
         </div>
-      )}      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      )}      <Dialog open={isOpen && !selectedImage} onOpenChange={setIsOpen}>
         <DialogContent 
           className="max-w-[95vw] lg:max-w-7xl w-full p-0 bg-white h-[95vh] sm:h-[90vh] overflow-hidden"
           onInteractOutside={(e) => e.preventDefault()}
-        >
-          <div className="relative">
-            <button
-              className="absolute right-4 top-4 z-20 bg-white/80 rounded-full p-1.5 backdrop-blur-sm hover:bg-gray-100 transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              <X className="h-5 w-5" />
-            </button>
+        >          <div className="relative">
+            {!selectedImage && (
+              <button
+                className="absolute right-4 top-4 z-30 bg-white/80 rounded-full p-1.5 backdrop-blur-sm hover:bg-gray-100 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                <X className="h-5 w-5" />
+              </button>
+            )}
             <DialogHeader className="p-4 sm:p-6 border-b sticky top-0 bg-white z-10">
               <DialogTitle className="text-xl sm:text-2xl font-bold text-gray-900 mt-4">{category}</DialogTitle>
               <DialogDescription className="text-gray-600 text-sm sm:text-base">Browse all images in this category</DialogDescription>
@@ -120,17 +121,10 @@ export function CategoryGallery({
               setIsOpen(true);
             }
           }}
-        >
-          <DialogContent 
+        >          <DialogContent 
             className="max-w-[98vw] lg:max-w-6xl w-full p-0 bg-white h-[98vh] sm:h-[96vh] overflow-auto flex flex-col items-center justify-center"
             onInteractOutside={(e) => e.preventDefault()}
           >
-            <button
-              className="absolute right-4 top-4 z-10 bg-white/80 rounded-full p-1 backdrop-blur-sm"
-              onClick={() => setSelectedImage(null)}
-            >
-              <X className="h-5 w-5" />
-            </button>
             <div className="relative w-full h-[70vh] sm:h-[80vh] flex items-center justify-center drop-shadow-xl">
               <Image
                 src={selectedImage.image || "/placeholder.svg"}

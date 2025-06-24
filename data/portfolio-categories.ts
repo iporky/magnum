@@ -330,7 +330,7 @@ export const portfolioCategories: PortfolioCategory[] = [
     description: "Publications focusing on CSR initiatives, sustainability reports, and corporate governance",
     images: [
       {
-        title: "Fostering Business Responsibility in MSME Clusters - Volume I",
+        title: "Fostering Business Responsibility in MSME Clusters - Vol. I",
         description: "Role of Policy Makers in promoting business responsibility among MSME clusters",
         image: "/images/categories/Corporate Social Responsibility/fostering-business-responsibility-vol1.jpeg"
       },
