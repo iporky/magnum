@@ -67,10 +67,11 @@ export function CategoryGallery({
             </div>
           </div>
         </div>
-      )}
-
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-[95vw] lg:max-w-7xl w-full p-0 bg-white h-[95vh] sm:h-[90vh] overflow-hidden">
+      )}      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent 
+          className="max-w-[95vw] lg:max-w-7xl w-full p-0 bg-white h-[95vh] sm:h-[90vh] overflow-hidden"
+          onInteractOutside={(e) => e.preventDefault()}
+        >
           <div className="relative">
             <button
               className="absolute right-4 top-4 z-20 bg-white/80 rounded-full p-1.5 backdrop-blur-sm hover:bg-gray-100 transition-colors"
@@ -110,8 +111,7 @@ export function CategoryGallery({
         </DialogContent>
       </Dialog>
 
-      {selectedImage && (
-        <Dialog 
+      {selectedImage && (        <Dialog 
           open={!!selectedImage} 
           onOpenChange={(open) => {
             if (!open) {
@@ -121,14 +121,17 @@ export function CategoryGallery({
             }
           }}
         >
-          <DialogContent className="max-w-[95vw] lg:max-w-4xl w-full p-0 bg-white h-[95vh] sm:h-[90vh] overflow-auto">
+          <DialogContent 
+            className="max-w-[98vw] lg:max-w-6xl w-full p-0 bg-white h-[98vh] sm:h-[96vh] overflow-auto flex flex-col items-center justify-center"
+            onInteractOutside={(e) => e.preventDefault()}
+          >
             <button
               className="absolute right-4 top-4 z-10 bg-white/80 rounded-full p-1 backdrop-blur-sm"
               onClick={() => setSelectedImage(null)}
             >
               <X className="h-5 w-5" />
             </button>
-            <div className="relative aspect-[3/4] w-full sm:max-h-[60vh] drop-shadow-xl">
+            <div className="relative w-full h-[70vh] sm:h-[80vh] flex items-center justify-center drop-shadow-xl">
               <Image
                 src={selectedImage.image || "/placeholder.svg"}
                 alt={selectedImage.title}
@@ -137,10 +140,9 @@ export function CategoryGallery({
                 priority
               />
             </div>
-            <div className="p-4 sm:p-6">
+            <div className="p-4 sm:p-6 w-full max-w-2xl mx-auto">
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{selectedImage.title}</h3>
               <p className="text-sm sm:text-base text-gray-600 mb-2">{selectedImage.description}</p>
-              {selectedImage.author && <p className="text-xs sm:text-sm text-gray-500">By {selectedImage.author}</p>}
             </div>
           </DialogContent>
         </Dialog>

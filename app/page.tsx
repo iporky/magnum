@@ -610,13 +610,11 @@ export default function MagnumPublishingSPA() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Footer */}
+      </section>      {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-3 mb-4 md:mb-0">
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
+            <div className="flex items-center space-x-3 text-center lg:text-left">
               <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden bg-white">
                 <Image src="/logo.png" alt="Magnum Logo" width={40} height={40} />
               </div>
@@ -625,8 +623,12 @@ export default function MagnumPublishingSPA() {
                 <p className="text-sm text-gray-400">Quality • Precision • Timeliness</p>
               </div>
             </div>
-            <div className="text-center md:text-right">
-              <p className="text-gray-400">© 2025 Magnum Custom Publishing. All rights reserved.</p>
+            <address className="text-gray-400 text-sm text-center lg:text-center not-italic">
+              C-27-B Gangotri Enclave, Alaknanda,<br className="hidden sm:block" />
+              opp Alaknanda Market, New Delhi 110019
+            </address>
+            <div className="text-center lg:text-right">
+              <p className="text-gray-400 mb-1">© 2025 Magnum Custom Publishing. All rights reserved.</p>
               <a
                 href="mailto:arvind@magnumcustompublishing.com"
                 className="text-[rgb(250,165,27)] hover:text-[rgb(250,165,27)] transition-colors"
