@@ -3,7 +3,7 @@ export const CATEGORY_THUMBNAILS: Record<string, string> = {
   "Climate Change Mitigation and Adaptation": "enhancing-energy-efficiency-india.jpeg",
   "Corporate Social Responsibility": "fostering-business-responsibility-vol1.jpeg",
   "Foreign Languages": "French Agriculture adaptation.jpg",
-  "Global Consultants, Trade Organisations": "Asset Management.jpg",
+  "Global Consultants, Trade Organisations": "Booking.com - How India Travels 2024.jpg",
   "Government of India": "BIS Brochure Hindi.jpg",
   "School Books": "Hindi.jpg",
   "Self-publishing": "Don't go to prison after college.jpg",

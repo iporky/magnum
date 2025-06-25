@@ -28,7 +28,7 @@ export function PortfolioShowcase() {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[rgb(250,165,27)] to-orange-500 rounded-2xl mb-4 shadow-lg">
             <ArrowRight className="w-8 h-8 text-white" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Featured Categories</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Work</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Explore our diverse portfolio across publishing categories, showcasing our expertise in delivering high-quality publications.
           </p>
@@ -48,7 +48,7 @@ export function PortfolioShowcase() {
                       src={`/images/categories/${category.name}/${CATEGORY_THUMBNAILS[category.name] || "placeholder.svg"}`} 
                       alt={category.name} 
                       fill 
-                      className="object-contain group-hover:scale-105 transition-transform duration-500 p-1 md:p-2 shadow-2xl rounded-lg" 
+                      className="object-contain group-hover:scale-105 transition-transform duration-500 p-1 md:p-2 shadow-2xl drop-shadow-xl rounded-lg" 
                     />
                   </div>                  {/* Enhanced Overlay - Touch/hover activated */}
                   <div className="absolute inset-2 md:inset-3 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-all duration-300 flex items-end rounded-lg">

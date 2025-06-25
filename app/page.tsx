@@ -185,7 +185,8 @@ export default function MagnumPublishingSPA() {
                 {["home", "about", "services", "portfolio", "contact"].map((section) => (
                   <button
                     key={section}
-                    onClick={() => scrollToSection(section)}
+                    onClick={() => scrollToSection(section)
+                    }
                     className={`block w-full text-left px-4 py-3 rounded-lg transition-all duration-200 capitalize font-medium ${
                       activeSection === section 
                         ? "text-[rgb(250,165,27)] bg-orange-50 border-l-4 border-[rgb(250,165,27)]" 
@@ -308,20 +309,20 @@ export default function MagnumPublishingSPA() {
             </div>
 
             {/* Trust indicators */}
-            <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-gray-500">
-              <div className="flex items-center gap-2">
+            <div className="mt-16 flex flex-col sm:flex-row items-start justify-center gap-8 text-gray-500 pl-6 sm:pl-0">
+              <div className="flex items-center gap-2 w-full sm:w-auto justify-start">
                 <div className="w-8 h-8 bg-gradient-to-br from-[rgb(250,165,27)] to-orange-500 rounded-lg flex items-center justify-center">
                   <Award className="w-5 h-5 text-white" />
                 </div>
-                <span className="font-medium">ISO Certified Quality</span>
+                <span className="font-medium">International Quality</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 w-full sm:w-auto justify-start">
                 <div className="w-8 h-8 bg-gradient-to-br from-[rgb(250,165,27)] to-orange-500 rounded-lg flex items-center justify-center">
                   <Zap className="w-5 h-5 text-white" />
                 </div>
-                <span className="font-medium">24/7 Support</span>
+                <span className="font-medium">Collaborative Approach</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 w-full sm:w-auto justify-start">
                 <div className="w-8 h-8 bg-gradient-to-br from-[rgb(250,165,27)] to-orange-500 rounded-lg flex items-center justify-center">
                   <Users className="w-5 h-5 text-white" />
                 </div>
@@ -346,7 +347,7 @@ export default function MagnumPublishingSPA() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">About Magnum Custom Publishing</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               We are a renowned provider of comprehensive 360-degree publishing and printing solutions, serving diverse
-              clientele with quality, precision, and timeliness at the forefront of everything we do.
+              clientele since the year 2005 with quality, precision, and timeliness at the forefront of everything we do.
             </p>
           </div>          {/* Two Column Layout */}
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
@@ -473,7 +474,7 @@ export default function MagnumPublishingSPA() {
                       <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-full border-2 border-white"></div>
                       <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-pink-500 rounded-full border-2 border-white"></div>
                     </div>
-                    <span className="text-white font-medium ml-2">Trusted by 100+ clients worldwide</span>
+                    <span className="text-white font-medium ml-2">Trusted by 25+ clients worldwide</span>
                   </div>
                 </div>
               </div>
@@ -481,7 +482,7 @@ export default function MagnumPublishingSPA() {
           </div>
         </div>
       </section>      {/* Services Section */}
-      <section id="services" className="py-10 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+      <section id="services" className="py-10 bg-gradient-to-br from-gray-300 via-gray-200 to-gray-100 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-full opacity-30">
           <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-[rgba(250,165,27,0.1)] to-transparent rounded-full blur-3xl"></div>
@@ -832,8 +833,8 @@ export default function MagnumPublishingSPA() {
             <div className="text-center lg:text-left space-y-6">
               <div className="flex items-center justify-center lg:justify-start space-x-4 group">
                 <div className="relative">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[rgb(250,165,27)] to-orange-500 p-0.5 group-hover:scale-110 transition-transform duration-300">
-                    <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+                  <div className="w-14 h-14 rounded-full p-0.5 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-full h-full rounded-full flex items-center justify-center overflow-hidden">
                       <Image src="/logo.png" alt="Magnum Logo" width={48} height={48} className="group-hover:scale-110 transition-transform duration-300" />
                     </div>
                   </div>
@@ -849,7 +850,7 @@ export default function MagnumPublishingSPA() {
               
               <div className="backdrop-blur-sm bg-white/5 rounded-xl p-4 border border-white/10">
                 <p className="text-gray-300 text-sm leading-relaxed">
-                  Transforming ideas into exceptional publications with three decades of expertise in custom publishing solutions.
+                  Transforming ideas into exceptional publications with two decades of expertise in custom publishing solutions.
                 </p>
               </div>
 
@@ -860,7 +861,7 @@ export default function MagnumPublishingSPA() {
                   <Mail className="w-5 h-5 text-gray-400 group-hover:text-[rgb(250,165,27)] transition-colors duration-300" />
                   <div className="absolute inset-0 rounded-full bg-[rgb(250,165,27)]/10 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
-                <a href="tel:+919899856275" 
+                <a href="tel:+919811097054" 
                    className="group relative p-3 rounded-full backdrop-blur-sm bg-white/5 border border-white/10 hover:bg-[rgb(250,165,27)]/20 transition-all duration-300">
                   <Phone className="w-5 h-5 text-gray-400 group-hover:text-[rgb(250,165,27)] transition-colors duration-300" />
                   <div className="absolute inset-0 rounded-full bg-[rgb(250,165,27)]/10 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -897,9 +898,9 @@ export default function MagnumPublishingSPA() {
                 
                 <div className="flex items-center justify-center space-x-3">
                   <Phone className="w-4 h-4 text-[rgb(250,165,27)] flex-shrink-0" />
-                  <a href="tel:+919899856275" 
+                  <a href="tel:+919811097054" 
                      className="text-gray-300 hover:text-[rgb(250,165,27)] transition-colors text-sm">
-                    +91 98998 56275
+                    +91 9811097054
                   </a>
                 </div>
               </div>
@@ -928,7 +929,7 @@ export default function MagnumPublishingSPA() {
                   © 2025 Magnum Custom Publishing. All rights reserved.
                 </p>
                 <p className="text-xs text-gray-500 mt-1">
-                  Crafting excellence in publishing since 1990
+                  Crafting excellence in publishing since 2005
                 </p>
               </div>
               

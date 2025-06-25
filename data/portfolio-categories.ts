@@ -127,44 +127,44 @@ export const portfolioCategories: PortfolioCategory[] = [
         image: "/images/categories/Global Consultants, Trade Organisations/Asset Management.jpg"
       },
       {
-        title: "Auto Components Industry Analysis",
-        description: "Market trends and forecasts for the global automotive components sector",
-        image: "/images/categories/Global Consultants, Trade Organisations/Auto Components.jpg"
+        title: "ATMA - Winning in the Global Tyre Industry",
+        description: "Insights into the global tyre industry and strategies for success",
+        image: "/images/categories/Global Consultants, Trade Organisations/ATMA-Winning in the global tyre industry.jpg"
       },
       {
-        title: "Building a Global Scale Chemical Industry",
-        description: "Strategic roadmap for scaling operations in the international chemical manufacturing sector",
-        image: "/images/categories/Global Consultants, Trade Organisations/Building a global scale chemical industry.jpg"
+        title: "B20 India - Decarbonising the Emerging G20 nations",
+        description: "B20 India report on decarbonisation strategies for G20 nations",
+        image: "/images/categories/Global Consultants, Trade Organisations/B20 India - Decarbonising the Emerging G20 nations.jpg"
       },
       {
-        title: "CII Quality Summit Whitepaper",
-        description: "Proceedings and insights from the Confederation of Indian Industry Quality Summit",
-        image: "/images/categories/Global Consultants, Trade Organisations/CII Quality Summit Whitepaper.jpg"
+        title: "Booking.com - How India Travels 2024",
+        description: "Booking.com report on travel trends in India for 2024",
+        image: "/images/categories/Global Consultants, Trade Organisations/Booking.com - How India Travels 2024.jpg"
       },
       {
-        title: "Highways Development",
-        description: "Infrastructure development guidelines for international highway construction projects",
-        image: "/images/categories/Global Consultants, Trade Organisations/Highways_Development.jpg"
+        title: "Cairn Way of Project Delivery",
+        description: "Cairn's approach to project delivery and management",
+        image: "/images/categories/Global Consultants, Trade Organisations/Cairn Way of Project Delivery.jpg"
       },
       {
-        title: "India's Labour Market",
-        description: "McKinsey Global Institute analysis of trends and opportunities in India's workforce",
-        image: "/images/categories/Global Consultants, Trade Organisations/MGI - India's Labour Market.jpg"
+        title: "Democratising Digital Commerce in India (ONDC)",
+        description: "ONDC report on digital commerce transformation in India",
+        image: "/images/categories/Global Consultants, Trade Organisations/Democratising digital commerce in India_ONDC.jpg"
+      },
+      {
+        title: "ICEA Report",
+        description: "ICEA's industry analysis and recommendations",
+        image: "/images/categories/Global Consultants, Trade Organisations/ICEA Report.jpg"
+      },
+      {
+        title: "Matrix - Digitizing Make in India",
+        description: "Matrix report on digitization in the Make in India initiative",
+        image: "/images/categories/Global Consultants, Trade Organisations/Matrix - Digitizing Make in India.jpg"
       },
       {
         title: "Nasscom - Perspective 2025",
         description: "Future outlook for India's IT and business services industry through 2025",
         image: "/images/categories/Global Consultants, Trade Organisations/Nasscom - Perspective 2025.jpg"
-      },
-      {
-        title: "Quality in the Digital Era",
-        description: "Framework for maintaining quality standards in digital transformation initiatives",
-        image: "/images/categories/Global Consultants, Trade Organisations/Quality in the Digital Era.jpg"
-      },
-      {
-        title: "Smart Cities White Paper",
-        description: "Best practices and case studies in global smart city development projects",
-        image: "/images/categories/Global Consultants, Trade Organisations/SmartCities_White paper.jpg"
       }
     ]
   },

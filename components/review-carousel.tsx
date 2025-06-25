@@ -20,7 +20,7 @@ export function ReviewCarousel({ reviews }: ReviewCarouselProps) {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % reviews.length);
-    }, 6000);
+    }, 10000);
     return () => clearInterval(timer);
   }, [reviews.length]);
 
@@ -57,24 +57,21 @@ export function ReviewCarousel({ reviews }: ReviewCarouselProps) {
         <div className="relative">
           <Card className="bg-white/90 backdrop-blur-sm p-6 sm:p-8 md:p-12 lg:p-16 rounded-3xl shadow-2xl hover:shadow-[0_30px_70px_rgba(0,0,0,0.12)] transition-all duration-700 min-h-[400px] sm:min-h-[450px] md:min-h-[500px] flex flex-col justify-between border border-gray-100 relative overflow-hidden group">
             {/* Card background decoration */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[rgba(250,165,27,0.05)] to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>            <div className="text-center md:text-center mb-8 relative z-10">
-              <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[rgb(250,165,27)] mb-4 sm:mb-6 opacity-80 font-serif">&ldquo;</div>
-              <p className="text-base sm:text-lg md:text-2xl lg:text-3xl mb-8 italic text-gray-700 leading-relaxed font-medium max-w-4xl mx-auto text-left md:text-center">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[rgba(250,165,27,0.05)] to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+            <div className="text-center md:text-center mb-8 relative z-10">
+              {/* Removed quote symbol, moved text up */}
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg mb-8 italic text-gray-700 leading-relaxed font-medium max-w-4xl mx-auto text-left md:text-center mt-0">
                 {reviews[currentIndex].review}
               </p>
             </div>
             
             <div className="text-center relative z-10">
-              <div className="w-24 h-24 bg-gradient-to-br from-[rgba(250,165,27,0.15)] to-[rgba(250,165,27,0.05)] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                <div className="text-3xl font-bold text-[rgb(250,165,27)]">
-                  {reviews[currentIndex].name.charAt(0)}
-                </div>
-              </div>              
-              <h4 className="text-2xl font-bold text-gray-900 mb-3">
+              {/* Removed initials in circle */}
+              <h4 className="text-base md:text-lg lg:text-xl font-bold text-gray-900 mb-3">
                 {reviews[currentIndex].name}
               </h4>
-              <p className="text-lg text-gray-600 mb-2">{reviews[currentIndex].designation}</p>
-              <p className="text-lg text-[rgb(250,165,27)] font-semibold">{reviews[currentIndex].company}</p>
+              <p className="text-sm md:text-base text-gray-600 mb-2">{reviews[currentIndex].designation}</p>
+              <p className="text-sm md:text-base text-[rgb(250,165,27)] font-semibold">{reviews[currentIndex].company}</p>
             </div>
           </Card>          
           {/* Navigation buttons */}
