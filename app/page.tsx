@@ -244,15 +244,13 @@ export default function MagnumPublishingSPA() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-[rgba(250,165,27,0.05)] to-transparent rounded-full blur-3xl"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">          <div className="text-center max-w-5xl mx-auto">            {/* Logo with enhanced styling */}
-            <div className="flex justify-center mb-6">
-              <div className="relative group">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center overflow-hidden bg-white shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-105">
-                  <Image src="/logo.png" alt="Magnum Logo" width={80} height={80} priority className="group-hover:scale-110 transition-transform duration-500" />
-                </div>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[rgba(250,165,27,0.2)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">          
+          <div className="text-center max-w-5xl mx-auto">            {/* Logo with enhanced styling */}
+<div className="flex justify-center mb-6">
+  <div>
+    <Image src="/logo.png" alt="Magnum Logo" width={80} height={80} priority />
+  </div>
+</div>
 
             {/* Enhanced heading with animations */}
             <div className="mb-6">
