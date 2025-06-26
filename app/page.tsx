@@ -265,8 +265,8 @@ export default function MagnumPublishingSPA() {
             </div>            {/* Enhanced description */}
             <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
               A leader in custom publishing solutions. We provide comprehensive{" "}
-              <span className="text-[rgb(250,165,27)] font-semibold">360-degree publishing</span> and printing
-              solutions with a strong emphasis on quality, precision, and timeliness.
+              <span className="text-[rgb(250,165,27)] font-semibold">360-degree publishing</span> and <span className="text-[rgb(250,165,27)] font-semibold">printing
+              solutions</span> with a strong emphasis on quality, precision, and timeliness.
             </p>
 
             {/* Enhanced statistics */}
