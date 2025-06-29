@@ -100,8 +100,8 @@ export function CategoryGallery({
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                       <div className="text-white p-4 w-full">
-                        <h3 className="text-base font-semibold mb-1 line-clamp-2">{image.title}</h3>
-                        <p className="text-xs text-gray-200 line-clamp-2">{image.description}</p>
+                        <h3 className="text-base font-semibold mb-1 line-clamp-3">{image.title}</h3>
+<p className="text-xs text-gray-200 line-clamp-3">{image.description}</p>
                       </div>
                     </div>
                   </div>
