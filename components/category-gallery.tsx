@@ -44,7 +44,6 @@ export function CategoryGallery({
       window.history.pushState({ gallery: true }, "");
     }
     // No cleanup here
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
   useEffect(() => {
@@ -52,10 +51,10 @@ export function CategoryGallery({
       window.history.pushState({ galleryImage: true }, "");
     }
     // No cleanup here
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedImage]);
 
   useEffect(() => {
+    // eslint-disable-next-line
     const onPopState = (e: PopStateEvent) => {
       if (selectedImage) {
         setSelectedImage(null);
