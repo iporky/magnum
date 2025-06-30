@@ -472,7 +472,7 @@ export default function MagnumPublishingSPA() {
                       <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-full border-2 border-white"></div>
                       <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-pink-500 rounded-full border-2 border-white"></div>
                     </div>
-                    <span className="text-white font-medium ml-2">Trusted by 25+ clients worldwide</span>
+                    <span className="text-white font-medium ml-2">Trusted by 50+ clients worldwide</span>
                   </div>
                 </div>
               </div>
@@ -581,7 +581,8 @@ export default function MagnumPublishingSPA() {
                       </a>
                       <p className="text-gray-500 text-sm mt-1">We&apos;ll respond within 24 hours</p>
                     </div>
-                  </div>                  <div className="group flex items-start space-x-3 p-3 rounded-2xl hover:bg-orange-50/50 transition-all duration-300">
+                  </div>                  
+                  <div className="group flex items-start space-x-3 p-3 rounded-2xl hover:bg-orange-50/50 transition-all duration-300">
                     <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-green-100 to-green-50 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
                       <Image
                         src="/WhatsApp.webp"
@@ -864,7 +865,7 @@ export default function MagnumPublishingSPA() {
                   <Phone className="w-5 h-5 text-gray-400 group-hover:text-[rgb(250,165,27)] transition-colors duration-300" />
                   <div className="absolute inset-0 rounded-full bg-[rgb(250,165,27)]/10 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
-                <a href="#contact" 
+                <a href="https://wa.me/919811097054?text=I&apos;m%20interested%20in%20publishing%20services" 
                    className="group relative p-3 rounded-full backdrop-blur-sm bg-white/5 border border-white/10 hover:bg-[rgb(250,165,27)]/20 transition-all duration-300">
                   <MessageCircle className="w-5 h-5 text-gray-400 group-hover:text-[rgb(250,165,27)] transition-colors duration-300" />
                   <div className="absolute inset-0 rounded-full bg-[rgb(250,165,27)]/10 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

@@ -43,6 +43,13 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* Move default close button down in second dialog */
+.dialog-detail-move-close > button {
+  top: 2rem !important;
+  border-radius: var(--radius) !important;
+  background: white !important;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

@@ -1,11 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Image from "next/image"
 import { X } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { CATEGORY_THUMBNAILS } from "@/data/category-thumbnails"
 import { Dialog, DialogContent, DialogTitle, DialogHeader, DialogDescription } from "@/components/ui/dialog"
+import { useRouter } from "next/navigation"
 
 interface GalleryImage {
   title: string
@@ -29,12 +30,48 @@ export function CategoryGallery({
   setIsOpen: externalSetIsOpen,
   showThumbnail = true // Default to showing thumbnail
 }: CategoryGalleryProps) {
+  const router = useRouter()
   const [internalIsOpen, setInternalIsOpen] = useState(false)
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
   
   // Use external controls if provided, otherwise use internal state
   const isOpen = externalIsOpen !== undefined ? externalIsOpen : internalIsOpen
   const setIsOpen = externalSetIsOpen || setInternalIsOpen
+
+  // Handle browser history for dialogs
+  useEffect(() => {
+    if (isOpen) {
+      window.history.pushState({ gallery: true }, "");
+    }
+    // No cleanup here
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (selectedImage) {
+      window.history.pushState({ galleryImage: true }, "");
+    }
+    // No cleanup here
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedImage]);
+
+  useEffect(() => {
+    const onPopState = (e: PopStateEvent) => {
+      if (selectedImage) {
+        setSelectedImage(null);
+        setIsOpen(true);
+        // Prevent browser navigation when closing image dialog
+        return;
+      }
+      if (isOpen) {
+        setIsOpen(false);
+        router.back();
+      }
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedImage, isOpen]);
 
   // Select thumbnail image based on CATEGORY_THUMBNAILS constant
   const thumbnailImageName = CATEGORY_THUMBNAILS[category]
@@ -67,11 +104,13 @@ export function CategoryGallery({
             </div>
           </div>
         </div>
-      )}      <Dialog open={isOpen && !selectedImage} onOpenChange={setIsOpen}>
+      )}      
+      <Dialog open={isOpen && !selectedImage} onOpenChange={setIsOpen}>
         <DialogContent 
           className="max-w-[95vw] lg:max-w-7xl w-full p-0 bg-white h-[95vh] sm:h-[90vh] overflow-hidden"
           onInteractOutside={(e) => e.preventDefault()}
-        >          <div className="relative">
+        >          
+          <div className="relative">
             {!selectedImage && (
               <button
                 className="absolute right-4 top-4 z-30 bg-white/80 rounded-full p-1.5 backdrop-blur-sm hover:bg-gray-100 transition-colors"
@@ -101,7 +140,7 @@ export function CategoryGallery({
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                       <div className="text-white p-4 w-full">
                         <h3 className="text-base font-semibold mb-1 line-clamp-3">{image.title}</h3>
-<p className="text-xs text-gray-200 line-clamp-3">{image.description}</p>
+                        <p className="text-xs text-gray-200 line-clamp-3">{image.description}</p>
                       </div>
                     </div>
                   </div>
@@ -112,7 +151,8 @@ export function CategoryGallery({
         </DialogContent>
       </Dialog>
 
-      {selectedImage && (        <Dialog 
+      {selectedImage && (        
+        <Dialog 
           open={!!selectedImage} 
           onOpenChange={(open) => {
             if (!open) {
@@ -121,8 +161,9 @@ export function CategoryGallery({
               setIsOpen(true);
             }
           }}
-        >          <DialogContent 
-            className="max-w-[98vw] lg:max-w-6xl w-full p-0 bg-white h-[98vh] sm:h-[96vh] overflow-auto flex flex-col items-center justify-center"
+        >          
+        <DialogContent 
+            className="max-w-[98vw] lg:max-w-6xl w-full p-0 bg-white h-[98vh] sm:h-[96vh] overflow-auto flex flex-col items-center justify-center dialog-detail-move-close"
             onInteractOutside={(e) => e.preventDefault()}
           >
             <div className="relative w-full h-[70vh] sm:h-[80vh] flex items-center justify-center drop-shadow-xl">

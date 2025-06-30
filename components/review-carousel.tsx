@@ -20,7 +20,7 @@ export function ReviewCarousel({ reviews }: ReviewCarouselProps) {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % reviews.length);
-    }, 10000);
+    }, 20000);
     return () => clearInterval(timer);
   }, [reviews.length]);
 
