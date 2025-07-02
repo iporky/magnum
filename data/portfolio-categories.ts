@@ -118,53 +118,53 @@ export const portfolioCategories: PortfolioCategory[] = [
   },
   {
     id: "global-consultants-trade-organisations",
-    name: "Global Consultants, Trade Organisations",
+    name: "Global Consultants, Trade Organizations",
     description: "Reports, white papers, and publications for international consultants and trade organizations",
     images: [
       {
         title: "Asset Management",
         description: "Comprehensive guide to modern asset management strategies for global organizations",
-        image: "/images/categories/Global Consultants, Trade Organisations/Asset Management.jpg"
+        image: "/images/categories/Global Consultants, Trade Organizations/Asset Management.jpg"
       },
       {
         title: "ATMA – Winning in the Global Tyre Industry",
         description: "Insights into the global tyre industry and strategies for success",
-        image: "/images/categories/Global Consultants, Trade Organisations/ATMA-Winning in the global tyre industry.jpg"
+        image: "/images/categories/Global Consultants, Trade Organizations/ATMA-Winning in the global tyre industry.jpg"
       },
       {
         title: "B20 India – Decarbonising the Emerging G20 Nations",
         description: "B20 India report on decarbonisation strategies for G20 nations",
-        image: "/images/categories/Global Consultants, Trade Organisations/B20 India - Decarbonising the Emerging G20 nations.jpg"
+        image: "/images/categories/Global Consultants, Trade Organizations/B20 India - Decarbonising the Emerging G20 nations.jpg"
       },
       {
         title: "Booking.com – How India Travels 2024",
         description: "Booking.com report on travel trends in India for 2024",
-        image: "/images/categories/Global Consultants, Trade Organisations/Booking.com - How India Travels 2024.jpg"
+        image: "/images/categories/Global Consultants, Trade Organizations/Booking.com - How India Travels 2024.jpg"
       },
       {
         title: "The Cairn Way Principles of Project Delivery",
         description: "Cairn's approach to project delivery and management",
-        image: "/images/categories/Global Consultants, Trade Organisations/Cairn Way of Project Delivery.jpg"
+        image: "/images/categories/Global Consultants, Trade Organizations/Cairn Way of Project Delivery.jpg"
       },
       {
         title: "Democratising Digital Commerce in India",
         description: "ONDC report on digital commerce transformation in India",
-        image: "/images/categories/Global Consultants, Trade Organisations/Democratising digital commerce in India_ONDC.jpg"
+        image: "/images/categories/Global Consultants, Trade Organizations/Democratising digital commerce in India_ONDC.jpg"
       },
       {
         title: "Making India the Global Manufacturing Powerhouse for Mobile Handsets and Components",
         description: "India Cellular and Electronics Association's industry analysis and recommendations",
-        image: "/images/categories/Global Consultants, Trade Organisations/ICEA Report.jpg"
+        image: "/images/categories/Global Consultants, Trade Organizations/ICEA Report.jpg"
       },
       {
         title: "Digitizing Make in India",
         description: "Matrix report on state of the B2B sector",
-        image: "/images/categories/Global Consultants, Trade Organisations/Matrix - Digitizing Make in India.jpg"
+        image: "/images/categories/Global Consultants, Trade Organizations/Matrix - Digitizing Make in India.jpg"
       },
       {
         title: "Nasscom – Perspective 2025: Shaping the Digital Revolution",
         description: "Future outlook for India's IT and business services industry through 2025",
-        image: "/images/categories/Global Consultants, Trade Organisations/Nasscom - Perspective 2025.jpg"
+        image: "/images/categories/Global Consultants, Trade Organizations/Nasscom - Perspective 2025.jpg"
       }
     ]
   },
