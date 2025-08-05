@@ -16,22 +16,6 @@ export default function MagnumPublishingSPA() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
   const [showScrollTop, setShowScrollTop] = useState(false)
-  
-  // Form state
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    projectType: 'Select project type',
-    message: ''
-  })
-  const [errors, setErrors] = useState({
-    name: '',
-    email: '',
-    projectType: '',
-    message: ''
-  })
-  const [status, setStatus] = useState<'pending' | 'ok' | 'error' | null>(null)
-  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const handleShowScrollTop = () => {
@@ -472,7 +456,7 @@ export default function MagnumPublishingSPA() {
                       <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-full border-2 border-white"></div>
                       <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-pink-500 rounded-full border-2 border-white"></div>
                     </div>
-                    <span className="text-white font-medium ml-2">Trusted by 50+ clients worldwide</span>
+                    <span className="text-white font-medium ml-2">Trusted by 25+ clients worldwide</span>
                   </div>
                 </div>
               </div>
@@ -558,7 +542,7 @@ export default function MagnumPublishingSPA() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="max-w-4xl mx-auto">
             {/* Contact Information Card */}
             <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-sm overflow-hidden">
               <CardContent className="p-8 lg:p-10">
@@ -581,8 +565,7 @@ export default function MagnumPublishingSPA() {
                       </a>
                       <p className="text-gray-500 text-sm mt-1">We&apos;ll respond within 24 hours</p>
                     </div>
-                  </div>                  
-                  <div className="group flex items-start space-x-3 p-3 rounded-2xl hover:bg-orange-50/50 transition-all duration-300">
+                  </div>                  <div className="group flex items-start space-x-3 p-3 rounded-2xl hover:bg-orange-50/50 transition-all duration-300">
                     <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-green-100 to-green-50 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
                       <Image
                         src="/WhatsApp.webp"
@@ -630,182 +613,6 @@ export default function MagnumPublishingSPA() {
                     </li>
                   </ul>
                 </div>
-              </CardContent>
-            </Card>
-
-            {/* Contact Form Card */}
-            <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-sm overflow-hidden">
-              <CardContent className="p-8 lg:p-10">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3">
-                  <div className="w-2 h-2 bg-[rgb(250,165,27)] rounded-full"></div>
-                  Start Your Project
-                  <div className="w-2 h-2 bg-[rgb(250,165,27)] rounded-full"></div>
-                </h3>                
-                <form 
-                  name="contact" 
-                  method="POST" 
-                  data-netlify="true" 
-                  className="space-y-6" 
-                  onSubmit={async (e) => {
-                  e.preventDefault();
-                  if (formData.name.trim() === '') {
-                    setErrors({ ...errors, name: 'Name is required' });
-                    return;
-                  }
-                  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-                    setErrors({ ...errors, email: 'Please enter a valid email' });
-                    return;
-                  }
-                  if (formData.projectType === 'Select project type') {
-                    setErrors({ ...errors, projectType: 'Please select a project type' });
-                    return;
-                  }
-                  if (formData.message.trim().length < 10) {
-                    setErrors({ ...errors, message: 'Message must be at least 10 characters long' });
-                    return;
-                  }
-
-                  try {
-                    setStatus('pending');
-                    setError(null);
-                    const form = e.target as HTMLFormElement;
-                    const formDataObj = new FormData(form);
-                    const res = await fetch('/', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                      body: new URLSearchParams([
-                        ['form-name', 'contact'],
-                        ...Array.from(formDataObj.entries()).map(([key, value]) => [key, value.toString()])
-                      ]).toString()
-                    });
-                    if (res.status === 200) {
-                      setStatus('ok');
-                      setFormData({
-                        name: '',
-                        email: '',
-                        projectType: 'Select project type',
-                        message: ''
-                      });
-                    } else {
-                      setStatus('error');
-                      setError(`${res.status} ${res.statusText}`);
-                    }
-                  } catch (err) {
-                    setStatus('error');
-                    setError(`${err}`);
-                  }
-                }}>
-                  <input type="hidden" name="form-name" value="contact" />
-                  
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-3">Name</label>
-                      <input
-                        name="name"
-                        type="text"
-                        value={formData.name}
-                        onChange={(e) => {
-                          setFormData({ ...formData, name: e.target.value });
-                          if (errors.name) setErrors({ ...errors, name: '' });
-                        }}
-                        className={`w-full px-4 py-4 border-2 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 ${
-                          errors.name ? 'border-red-500' : 'border-gray-200 hover:border-orange-300'
-                        }`}
-                        placeholder="Your full name"
-                      />
-                      {errors.name && <p className="mt-2 text-sm text-red-500">{errors.name}</p>}
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-3">Email</label>
-                      <input
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => {
-                          setFormData({ ...formData, email: e.target.value });
-                          if (errors.email) setErrors({ ...errors, email: '' });
-                        }}
-                        className={`w-full px-4 py-4 border-2 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 ${
-                          errors.email ? 'border-red-500' : 'border-gray-200 hover:border-orange-300'
-                        }`}
-                        placeholder="your@email.com"
-                      />
-                      {errors.email && <p className="mt-2 text-sm text-red-500">{errors.email}</p>}
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">Project Type</label>
-                    <select 
-                      name="projectType"
-                      value={formData.projectType}
-                      onChange={(e) => {
-                        setFormData({ ...formData, projectType: e.target.value });
-                        if (errors.projectType) setErrors({ ...errors, projectType: '' });
-                      }}
-                      className={`w-full px-4 py-4 border-2 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 ${
-                        errors.projectType ? 'border-red-500' : 'border-gray-200 hover:border-orange-300'
-                      }`}
-                    >
-                      <option>Select project type</option>
-                      <option>Book Publishing</option>
-                      <option>Corporate Publication</option>
-                      <option>Research Report</option>
-                      <option>Magazine/Journal</option>
-                      <option>Other</option>
-                    </select>
-                    {errors.projectType && <p className="mt-2 text-sm text-red-500">{errors.projectType}</p>}
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">Message</label>
-                    <textarea
-                      name="message"
-                      rows={5}
-                      value={formData.message}
-                      onChange={(e) => {
-                        setFormData({ ...formData, message: e.target.value });
-                        if (errors.message) setErrors({ ...errors, message: '' });
-                      }}
-                      className={`w-full px-4 py-4 border-2 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 resize-none ${
-                        errors.message ? 'border-red-500' : 'border-gray-200 hover:border-orange-300'
-                      }`}
-                      placeholder="Tell us about your project in detail..."
-                    ></textarea>
-                    {errors.message && <p className="mt-2 text-sm text-red-500">{errors.message}</p>}
-                  </div>
-                  
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-gradient-to-r from-[rgb(250,165,27)] to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" 
-                    size="lg"
-                    disabled={status === 'pending'}
-                  >
-                    {status === 'pending' ? (
-                      <div className="flex items-center gap-2">
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                        Sending...
-                      </div>
-                    ) : (
-                      <div className="flex items-center gap-2">
-                        Send Message
-                        <ArrowRight className="w-5 h-5" />
-                      </div>
-                    )}
-                  </Button>
-                  
-                  {status === 'ok' && (
-                    <div className="p-4 bg-green-50 border border-green-200 rounded-xl">
-                      <p className="text-green-600 font-medium text-center">✨ Message sent successfully! We&apos;ll get back to you soon.</p>
-                    </div>
-                  )}
-                  {status === 'error' && (
-                    <div className="p-4 bg-red-50 border border-red-200 rounded-xl">
-                      <p className="text-red-600 font-medium text-center">❌ Error: {error}</p>
-                    </div>
-                  )}
-                </form>
               </CardContent>
             </Card>
           </div>
@@ -865,7 +672,7 @@ export default function MagnumPublishingSPA() {
                   <Phone className="w-5 h-5 text-gray-400 group-hover:text-[rgb(250,165,27)] transition-colors duration-300" />
                   <div className="absolute inset-0 rounded-full bg-[rgb(250,165,27)]/10 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
-                <a href="https://wa.me/919811097054?text=I&apos;m%20interested%20in%20publishing%20services" 
+                <a href="#contact" 
                    className="group relative p-3 rounded-full backdrop-blur-sm bg-white/5 border border-white/10 hover:bg-[rgb(250,165,27)]/20 transition-all duration-300">
                   <MessageCircle className="w-5 h-5 text-gray-400 group-hover:text-[rgb(250,165,27)] transition-colors duration-300" />
                   <div className="absolute inset-0 rounded-full bg-[rgb(250,165,27)]/10 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
