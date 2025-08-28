@@ -456,7 +456,7 @@ export default function MagnumPublishingSPA() {
                       <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-full border-2 border-white"></div>
                       <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-pink-500 rounded-full border-2 border-white"></div>
                     </div>
-                    <span className="text-white font-medium ml-2">Trusted by 25+ clients worldwide</span>
+                    <span className="text-white font-medium ml-2">Trusted by 100+ clients worldwide</span>
                   </div>
                 </div>
               </div>
