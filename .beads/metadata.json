@@ -1,0 +1,8 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "server",
+  "dolt_server_port": 3307,
+  "dolt_database": "magnum",
+  "project_id": "558d8dd5-0094-45b7-a22b-8caf59705e40"
+}
