@@ -12,6 +12,7 @@ interface GalleryImage {
   title: string
   description: string
   image: string
+  altText?: string
   author?: string
 }
 
@@ -86,7 +87,7 @@ export function CategoryGallery({
               <div style={{ aspectRatio: 3 / 4 }} className="relative">
                 <Image
                   src={thumbnailImage.image || "/placeholder.svg"}
-                  alt={thumbnailImage.title}
+                  alt={thumbnailImage.altText || thumbnailImage.title}
                   fill
                   className="object-contain group-hover:scale-105 transition-transform duration-500"
                 />
@@ -131,7 +132,7 @@ export function CategoryGallery({
                     <div style={{ aspectRatio: category === "Children's Books in Regional Languages" ? 1.5 : 3 / 4.2 }} className="relative">
                       <Image
                         src={image.image || "/placeholder.svg"}
-                        alt={image.title}
+                        alt={image.altText || image.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
@@ -168,7 +169,7 @@ export function CategoryGallery({
             <div className="relative w-full h-[70vh] sm:h-[80vh] flex items-center justify-center drop-shadow-xl">
               <Image
                 src={selectedImage.image || "/placeholder.svg"}
-                alt={selectedImage.title}
+                alt={selectedImage.altText || selectedImage.title}
                 fill
                 className="object-contain"
                 priority

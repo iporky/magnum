@@ -46,7 +46,7 @@ export function PortfolioShowcase() {
                   <div className="relative w-full h-full rounded-lg overflow-hidden bg-white">
                     <Image 
                       src={`/images/categories/${category.name}/${CATEGORY_THUMBNAILS[category.name] || "placeholder.svg"}`} 
-                      alt={category.name} 
+                      alt={(() => { const thumb = category.images.find(img => img.image.includes(CATEGORY_THUMBNAILS[category.name])) ?? category.images[0]; return (thumb as {altText?: string; title: string}).altText ?? category.name; })()} 
                       fill 
                       className="object-contain group-hover:scale-105 transition-transform duration-500 p-1 md:p-2 shadow-2xl drop-shadow-xl rounded-lg" 
                     />
