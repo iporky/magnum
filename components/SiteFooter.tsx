@@ -21,7 +21,7 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
           {/* Company info */}
           <div className="text-center lg:text-left space-y-6">
-            <Link href="/" className="flex items-center justify-center lg:justify-start space-x-4 group">
+            <Link href="/" className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 group">
               <div className="relative">
                 <div className="w-14 h-14 rounded-full flex items-center justify-center overflow-hidden">
                   <Image src="/logo.png" alt="Magnum Custom Publishing Logo" width={48} height={48} className="group-hover:scale-110 transition-transform duration-300" />
