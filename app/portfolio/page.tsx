@@ -91,7 +91,6 @@ export default function PortfolioPage() {
                     {category.name}
                   </h2>
                   <p className="text-gray-500 text-sm leading-relaxed mb-3">{category.description}</p>
-                  <span className="text-xs font-semibold text-[rgb(250,165,27)]">{category.images.length} publications</span>
                 </div>
               </Link>
             )
