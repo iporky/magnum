@@ -99,7 +99,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-bold text-gray-900 text-lg mb-1">Phone</h3>
                   <a href="tel:+919811097054" className="text-[rgb(250,165,27)] hover:text-orange-600 transition-colors text-lg font-medium">
-                    +91 9811097054
+                    +91 98110 97054
                   </a>
                 </div>
               </div>
