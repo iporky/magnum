@@ -115,6 +115,7 @@ export function CategoryGallery({
               <button
                 className="absolute right-4 top-4 z-30 bg-white/80 rounded-full p-1.5 backdrop-blur-sm hover:bg-gray-100 transition-colors"
                 onClick={() => setIsOpen(false)}
+                aria-label="Close gallery"
               >
                 <X className="h-5 w-5" />
               </button>

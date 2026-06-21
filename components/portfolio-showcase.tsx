@@ -80,7 +80,7 @@ export function PortfolioShowcase() {
                 <div className="backdrop-blur-sm bg-white/60 rounded-2xl p-3 md:p-4 border border-gray-100 shadow-lg">
                   <div className="flex items-center justify-center gap-2 md:gap-3 mb-2 md:mb-3">
                     <div className="w-2 h-2 bg-[rgb(250,165,27)] rounded-full"></div>
-                    <h5 className="font-bold text-gray-900 text-base md:text-lg">Featured Publications</h5>
+                    <h3 className="font-bold text-gray-900 text-base md:text-lg">Featured Publications</h3>
                     <div className="w-2 h-2 bg-[rgb(250,165,27)] rounded-full"></div>
                   </div>                  <ul className="space-y-1 mb-2 md:mb-3">
                     {category.images.slice(0, 3).map((image, idx) => (

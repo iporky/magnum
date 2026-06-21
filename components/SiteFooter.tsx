@@ -41,13 +41,13 @@ export function SiteFooter() {
               </p>
             </div>
             <div className="flex justify-center lg:justify-start space-x-4">
-              <a href="mailto:arvind@magnumcustompublishing.com" className="group relative p-3 rounded-full backdrop-blur-sm bg-white/5 border border-white/10 hover:bg-[rgb(250,165,27)]/20 transition-all duration-300">
+              <a href="mailto:arvind@magnumcustompublishing.com" aria-label="Email Magnum Custom Publishing" className="group relative p-3 rounded-full backdrop-blur-sm bg-white/5 border border-white/10 hover:bg-[rgb(250,165,27)]/20 transition-all duration-300">
                 <Mail className="w-5 h-5 text-gray-400 group-hover:text-[rgb(250,165,27)] transition-colors duration-300" />
               </a>
-              <a href="tel:+919811097054" className="group relative p-3 rounded-full backdrop-blur-sm bg-white/5 border border-white/10 hover:bg-[rgb(250,165,27)]/20 transition-all duration-300">
+              <a href="tel:+919811097054" aria-label="Call Magnum Custom Publishing" className="group relative p-3 rounded-full backdrop-blur-sm bg-white/5 border border-white/10 hover:bg-[rgb(250,165,27)]/20 transition-all duration-300">
                 <Phone className="w-5 h-5 text-gray-400 group-hover:text-[rgb(250,165,27)] transition-colors duration-300" />
               </a>
-              <a href="https://wa.me/919811097054?text=I'm%20interested%20in%20publishing%20services" target="_blank" rel="noopener noreferrer" className="group relative p-3 rounded-full backdrop-blur-sm bg-white/5 border border-white/10 hover:bg-[rgb(250,165,27)]/20 transition-all duration-300">
+              <a href="https://wa.me/919811097054?text=I'm%20interested%20in%20publishing%20services" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp with Magnum Custom Publishing" className="group relative p-3 rounded-full backdrop-blur-sm bg-white/5 border border-white/10 hover:bg-[rgb(250,165,27)]/20 transition-all duration-300">
                 <MessageCircle className="w-5 h-5 text-gray-400 group-hover:text-[rgb(250,165,27)] transition-colors duration-300" />
               </a>
             </div>
@@ -102,7 +102,7 @@ export function SiteFooter() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-center md:text-left">
-              <p className="text-gray-400 text-sm">© 2025 Magnum Custom Publishing. All rights reserved.</p>
+              <p className="text-gray-400 text-sm">© 2026 Magnum Custom Publishing. All rights reserved.</p>
               <p className="text-xs text-gray-500 mt-1">Crafting excellence in publishing since 2005</p>
             </div>
             <div className="flex items-center space-x-6">
