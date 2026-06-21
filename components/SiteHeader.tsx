@@ -34,7 +34,7 @@ export function SiteHeader() {
             </div>
             <div>
               <div className="text-2xl font-bold text-gray-900 tracking-tight">MAGNUM</div>
-              <div className="text-sm text-amber-700 font-semibold tracking-wide">CUSTOM PUBLISHING</div>
+              <div className="text-sm text-gray-900 font-semibold tracking-wide">CUSTOM PUBLISHING</div>
             </div>
           </Link>
 
@@ -46,13 +46,13 @@ export function SiteHeader() {
                 href={link.href}
                 className={`relative px-4 py-2 text-sm font-semibold transition-all duration-300 rounded-lg hover:bg-gray-50 ${
                   isActive(link.href)
-                    ? "text-amber-700 bg-orange-50"
-                    : "text-gray-700 hover:text-amber-700"
+                    ? "text-gray-900 bg-gray-100"
+                    : "text-gray-700 hover:text-gray-900"
                 }`}
               >
                 {link.label}
                 {isActive(link.href) && (
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-amber-700 rounded-full" />
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gray-900 rounded-full" />
                 )}
               </Link>
             ))}
@@ -72,7 +72,7 @@ export function SiteHeader() {
                 href="https://wa.me/919811097054?text=I'm%20interested%20in%20publishing%20services"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 px-4 py-2 bg-amber-700 text-white text-sm font-semibold rounded-lg hover:bg-amber-800 transition-all duration-300 shadow-md hover:shadow-lg"
+                className="flex items-center space-x-2 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-black transition-all duration-300 shadow-md hover:shadow-lg"
               >
                 <Image src="/WhatsApp.webp" alt="WhatsApp" width={16} height={16} className="object-contain" />
                 <span>WhatsApp</span>
@@ -101,8 +101,8 @@ export function SiteHeader() {
                   onClick={() => setIsMenuOpen(false)}
                   className={`block w-full text-left px-4 py-3 rounded-lg transition-all duration-200 font-medium ${
                     isActive(link.href)
-                      ? "text-amber-700 bg-orange-50 border-l-4 border-amber-700"
-                      : "text-gray-700 hover:text-amber-700 hover:bg-gray-50"
+                      ? "text-gray-900 bg-gray-100 border-l-4 border-gray-900"
+                      : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                   }`}
                 >
                   {link.label}
@@ -126,7 +126,7 @@ export function SiteHeader() {
                   href="https://wa.me/919811097054?text=I'm%20interested%20in%20publishing%20services"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-3 bg-amber-700 text-white hover:bg-amber-800 transition-all duration-200 rounded-lg shadow-md"
+                  className="flex items-center gap-3 px-4 py-3 bg-gray-900 text-white hover:bg-black transition-all duration-200 rounded-lg shadow-md"
                 >
                   <Image src="/WhatsApp.webp" alt="WhatsApp" width={20} height={20} className="object-contain" />
                   <div>

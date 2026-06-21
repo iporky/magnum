@@ -68,9 +68,9 @@ export default function ContactPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Mail className="w-6 h-6 text-[rgb(250,165,27)]" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="font-bold text-gray-900 text-lg mb-1">Email Us</h3>
-                  <a href="mailto:arvind@magnumcustompublishing.com" className="text-[rgb(250,165,27)] hover:text-orange-600 transition-colors text-lg font-medium">
+                  <a href="mailto:arvind@magnumcustompublishing.com" className="text-[rgb(250,165,27)] hover:text-orange-600 transition-colors text-lg font-medium break-all">
                     arvind@magnumcustompublishing.com
                   </a>
                   <p className="text-gray-500 text-sm mt-1">We respond within 24 hours</p>

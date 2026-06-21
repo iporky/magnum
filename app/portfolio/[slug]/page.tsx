@@ -102,7 +102,6 @@ export default async function PortfolioCategoryPage({ params }: Props) {
         <div className="mb-10">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{category.name}</h1>
           <p className="text-xl text-gray-600 leading-relaxed max-w-3xl">{category.description}</p>
-          <p className="text-sm text-[rgb(250,165,27)] font-semibold mt-2">{category.images.length} publications</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">

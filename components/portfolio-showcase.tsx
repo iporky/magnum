@@ -60,11 +60,7 @@ export function PortfolioShowcase() {
                     </div>
                   </div>
                   {/* Floating Badge - Touch/hover activated */}
-                  <div className="absolute top-4 right-4 md:top-6 md:right-6 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300">
-                    <Badge className="bg-[rgb(250,165,27)] text-white shadow-lg text-xs">
-                      {category.images.length} Publications
-                    </Badge>
-                  </div>
+
                 </div>
               </div>              <CardContent className="p-3 md:p-4 lg:p-5">
                 {/* Enhanced Category Header */}
